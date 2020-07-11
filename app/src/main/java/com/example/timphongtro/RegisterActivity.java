@@ -12,7 +12,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.testgooglelogin.MainActivity;
 import com.example.testgooglelogin.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;

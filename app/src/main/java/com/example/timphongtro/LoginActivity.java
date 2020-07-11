@@ -103,12 +103,13 @@ public class LoginActivity extends AppCompatActivity {
                     if(task.isSuccessful())
                     {
                         mLoadingBar.dismiss();
-                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                        Intent intent = new Intent(LoginActivity.this, LogoutActivity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(intent);
                     }
                     else {
-                        Toast.makeText(LoginActivity.this, task.getException().toString(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, "Login is failed", Toast.LENGTH_SHORT).show();
+                        mLoadingBar.dismiss();
                     }
                 }
             });
@@ -162,11 +163,11 @@ public class LoginActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             FirebaseUser user = mAuth.getCurrentUser();
-                            Toast.makeText(LoginActivity.this, user.getEmail()+user.getDisplayName(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, "Login is successfully", Toast.LENGTH_SHORT).show();
                             updateUI(user);
                         } else {
                             // If sign in fails, display a message to the user.
-                            Toast.makeText(LoginActivity.this, task.getException().toString(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, "Login is failed", Toast.LENGTH_SHORT).show();
                             updateUI(null);
                         }
 
@@ -176,7 +177,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void updateUI(FirebaseUser user) {
-        Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+        Intent intent = new Intent(LoginActivity.this,LogoutActivity.class);
         startActivity(intent);
     }
 
