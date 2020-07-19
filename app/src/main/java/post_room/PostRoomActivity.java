@@ -42,7 +42,7 @@ public class PostRoomActivity extends AppCompatActivity {
 //        recyclerView.setHasFixedSize(true);
 //        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        ref = FirebaseDatabase.getInstance().getReference().child("Rooms");
+        ref = FirebaseDatabase.getInstance().getReference().child("Roomss");
 
         btnDang.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,15 +97,7 @@ public class PostRoomActivity extends AppCompatActivity {
 //        recyclerView.setAdapter(adapter);
     }
 
-    private RadioButton isCheckLoaiPhong()
-    {
-        if(rdKTX.isChecked()) return rdKTX;
-        else if(rdPhongChoThue.isChecked()) return  rdPhongChoThue;
-        else if(rdPhongOGhep.isChecked()) return  rdPhongOGhep;
-        else if(rdNhaNguyenCan.isChecked()) return  rdNhaNguyenCan;
 
-        return rdKTX;
-    }
 
     private void anhXa()
     {
