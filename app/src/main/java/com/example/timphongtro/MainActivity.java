@@ -25,15 +25,55 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
-public class MainActivity extends AppCompatActivity {
+import login_logout_register.LogoutActivity;
+import post_room.PostRoomActivity;
 
+public class MainActivity extends AppCompatActivity {
+    Button btnTaiKhoan,btnDangPhong,btnOGhep, btnTimKiem;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        anhXa();
 
+        btnTaiKhoan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, LogoutActivity.class);
+                startActivity(intent);
+            }
+        });
+        btnDangPhong.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, PostRoomActivity.class);
+                startActivity(intent);
+            }
+        });
+        btnOGhep.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, LogoutActivity.class);
+                startActivity(intent);
+            }
+        });
+        btnTimKiem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    private void anhXa()
+    {
+        btnTaiKhoan = findViewById(R.id.btnTaiKhoan);
+        btnDangPhong = findViewById(R.id.btnDangPhong);
+        btnOGhep = findViewById(R.id.btnOGhep);
+        btnTimKiem = findViewById(R.id.btnTimKiem);
     }
 
 }

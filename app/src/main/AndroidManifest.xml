@@ -8,17 +8,19 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name="com.example.timphongtro.LoginActivity">
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity android:name="chat_real_time.MessageActivity"></activity>
+        <activity android:name="login_logout_register.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.timphongtro.MainActivity"/>
-        <activity android:name="com.example.timphongtro.RegisterActivity"/>
-        <activity android:name="com.example.timphongtro.LogoutActivity"/>
+        <activity android:name="com.example.timphongtro.MainActivity" />
+        <activity android:name="login_logout_register.RegisterActivity" />
+        <activity android:name="login_logout_register.LogoutActivity" />
+        <activity android:name="post_room.PostRoomActivity" />
     </application>
 
 </manifest>
