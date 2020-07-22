@@ -12,6 +12,8 @@
         android:layout_height="match_parent"
         tools:layout_editor_absoluteY="8dp"
         tools:layout_editor_absoluteX="8dp"
+        android:background="@drawable/background1"
+        android:layout_margin="10dp"
         >
         <LinearLayout
             android:layout_width="fill_parent"
@@ -23,7 +25,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Đăng Phòng"
+                android:text="@string/txtDangPhong"
                 android:textSize="30sp"
                 android:textStyle="bold"/>
             <LinearLayout
@@ -81,7 +83,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="@dimen/margin_top"
                 android:layout_weight="1">
                 <TextView
                     android:layout_width="wrap_content"
@@ -101,7 +103,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="@dimen/margin_top"
                 android:layout_weight="1">
                 <TextView
                     android:layout_width="wrap_content"
@@ -143,7 +145,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="@dimen/margin_top"
                 android:orientation="vertical"
                 android:layout_weight="1">
                 <TextView
@@ -163,7 +165,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="@dimen/margin_top"
                 android:orientation="vertical"
                 android:layout_weight="1">
                 <TextView
@@ -172,51 +174,36 @@
                     android:textSize="25sp"
                     android:text="Chi phí"
                     android:textStyle="bold"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="20sp"
-                    android:text="Giá cho thuê:"/>
+
                 <EditText
-                    android:id="@+id/edtGiaThue"
-                    android:layout_marginHorizontal="20dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Nhập số tiền..."/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="20sp"
-                    android:text="Đặt cọc:"/>
-                <EditText
-                    android:id="@+id/edtDatCoc"
-                    android:layout_marginHorizontal="20dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Nhập số tiền..."/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="20sp"
-                    android:text="Tiền điện:"/>
-                <EditText
-                    android:id="@+id/edtTienDien"
-                    android:layout_marginHorizontal="20dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Nhập số tiền..."/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="20sp"
-                    android:text="Tiền nước:"/>
-                <EditText
-                    android:id="@+id/edtTienNuoc"
+                    android:id="@+id/edtChiPhi"
                     android:layout_marginHorizontal="20dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Nhập số tiền..."/>
 
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_top"
+                android:orientation="vertical"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:text="Địa chỉ"
+                    android:textStyle="bold"/>
+
+                <EditText
+                    android:id="@+id/edtDiaChi"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nhập địa chỉ..."/>
             </LinearLayout>
 
             <LinearLayout
@@ -229,42 +216,35 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="25sp"
-                    android:text="Chi phí"/>
-                <EditText
-
-                    android:layout_marginHorizontal="20dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Nhập vào chi phí..."/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:orientation="vertical"
-                android:layout_weight="1">
-                <TextView
+                    android:text="Ảnh"
+                    android:textStyle="bold"/>
+                <Button
+                    android:layout_marginTop="@dimen/margin_top"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="25sp"
-                    android:text="Chi phí"/>
-                <EditText
-                    android:layout_marginHorizontal="20dp"
+                    android:text="Choose image"
+                    android:background="@drawable/custom_button"
+                    android:id="@+id/btnChoose"
+                    />
+                <ImageView
+                    android:id="@+id/imgView"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Nhập vào chi phí..."/>
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="right"
+                android:gravity="right|center_vertical"
                 android:layout_weight="1">
                 <Button
                     android:id="@+id/btnDang"
                     android:layout_marginTop="10dp"
+                    android:background="@drawable/bg_botton_white"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
                     android:text="Đăng"/>
             </LinearLayout>
 
