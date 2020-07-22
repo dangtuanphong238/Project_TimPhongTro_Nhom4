@@ -11,16 +11,17 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity android:name="navigation.NavigationBarActivity"></activity>
         <activity android:name="chat_real_time.MessageActivity" />
-        <activity android:name="login_logout_register.LoginActivity">
+        <activity android:name="com.example.timphongtro.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.timphongtro.MainActivity" />
-        <activity android:name="login_logout_register.RegisterActivity" />
-        <activity android:name="login_logout_register.LogoutActivity" />
+        <activity android:name="com.example.timphongtro.MainActivity">
+
+        </activity>
+        <activity android:name="com.example.timphongtro.RegisterActivity" />
         <activity android:name="post_room.PostRoomActivity" />
     </application>
 

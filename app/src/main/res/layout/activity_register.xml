@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="login_logout_register.RegisterActivity"
+    tools:context="com.example.timphongtro.RegisterActivity"
     android:background="@drawable/bb">
 
     <TextView
