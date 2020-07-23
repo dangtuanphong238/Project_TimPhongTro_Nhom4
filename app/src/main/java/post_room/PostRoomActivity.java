@@ -34,7 +34,7 @@ public class PostRoomActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_post_room);
+        //setContentView(R.layout.activity_post_room);
 
         anhXa();
 
