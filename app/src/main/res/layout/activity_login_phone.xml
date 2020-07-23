@@ -26,7 +26,7 @@
         android:layout_below="@id/imageView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
-        android:text="May I ask you phone number?"
+        android:text="Đăng nhập số điện thoại"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
         android:textColor="@color/colorWhite" />
 
@@ -49,7 +49,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="2"
             android:digits="0123456789"
-            android:hint="enter your number"
+            android:hint="nhập số điện thoại để đăng nhập"
             android:maxLength="10" />
 
     </LinearLayout>
