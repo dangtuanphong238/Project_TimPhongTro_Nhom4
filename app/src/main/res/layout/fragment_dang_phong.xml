@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.example.timphongtro.DangPhongFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -218,19 +219,21 @@
                     android:textSize="25sp"
                     android:text="Ảnh"
                     android:textStyle="bold"/>
-                <Button
-                    android:layout_marginTop="@dimen/margin_top"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Choose image"
-                    android:background="@drawable/custom_button"
-                    android:id="@+id/btnChoose"
-                    />
+
+                    <ImageButton
+                        android:layout_marginTop="@dimen/margin_top"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/choose"
+                        android:id="@+id/btnChoose"
+                        />
+
                 <ImageView
                     android:id="@+id/imgView"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/noimage"/>
             </LinearLayout>
 
             <LinearLayout
