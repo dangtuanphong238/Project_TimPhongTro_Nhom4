@@ -30,6 +30,7 @@ public class LoginActivity extends AppCompatActivity {
     private static final int RC_SIGN_IN = 101;
     private FirebaseAuth mAuth;
     Button btnGoogle;
+    Button btnPhone;
     GoogleSignInClient mGoogleSignInClient;
     ProgressDialog mLoadingBar;
     TextView txtSignUp;
@@ -66,6 +67,12 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 checkCrededentials();
+            }
+        });
+        btnPhone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LoginActivity.this, LoginPhoneActivity.class));
             }
         });
         txtSignUp.setOnClickListener(new View.OnClickListener() {
@@ -122,6 +129,7 @@ public class LoginActivity extends AppCompatActivity {
     private void anhXa()
     {
         btnGoogle = findViewById(R.id.btnGoogle);
+        btnPhone = findViewById(R.id.btnPhone);
         txtSignUp = findViewById(R.id.textViewSignUp);
         btnLogin = findViewById(R.id.btnlogin);
         inputEmail = findViewById(R.id.inputEmail);
