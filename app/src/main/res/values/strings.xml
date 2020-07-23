@@ -16,7 +16,7 @@
     <string name="menu_send">Send</string>
     <string name="Open">Open</string>
     <string name="Close">Close</string>
-
+    <string name="facebook_app_id">312176589811245</string> <string name="fb_login_protocol_scheme">fb312176589811245</string>
     <string name="txtDangPhong">Đăng Phòng</string>
 
     <!-- TODO: Remove or change this placeholder text -->
