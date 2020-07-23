@@ -1,20 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.timphongtro.MainActivity">
-
-
-    <TextView
+    android:orientation="vertical"
+    tools:context="com.example.timphongtro.MainActivity"
+    android:weightSum="10">
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabBar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="HELLOWORLD"/>
-    <TextView
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:tabMode="scrollable"
+        app:tabIndicatorColor="@color/colorRed"
+        >
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tìm Kiếm"
+            android:id="@+id/TabSearch"/>
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ở Ghép"
+            android:id="@+id/TabGhep"/>
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đăng Phòng"
+            android:id="@+id/TabDangPhong"/>
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tài Khoản"
+            android:id="@+id/TabTaiKhoan"/>
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:layout_height="0dp"
+        android:layout_weight="9"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="PhanThanhNhan"/>
+        android:id="@+id/viewPager">
 
+    </androidx.viewpager.widget.ViewPager>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
+
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:orientation="vertical"-->
+<!--    tools:context="com.example.timphongtro.MainActivity"-->
+<!--    android:id="@+id/drawerLayout">-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:orientation="vertical">-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="0dp"-->
+<!--            android:layout_weight="5"/>-->
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="0dp"-->
+<!--            android:layout_weight="5"/>-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="0dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:gravity="bottom|center">-->
+<!--            <Button-->
+<!--                android:id="@+id/btnTimKiem"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:textAllCaps="false"-->
+<!--                android:text="Tìm kiếm"/>-->
+<!--            <Button-->
+<!--                android:id="@+id/btnOGhep"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:textAllCaps="false"-->
+<!--                android:text="Ở ghép"/>-->
+<!--            <Button-->
+<!--                android:id="@+id/btnDangPhong"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Đăng phòng"-->
+<!--                android:textAllCaps="false"/>-->
+<!--            <Button-->
+<!--                android:id="@+id/btnTaiKhoan"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:textAllCaps="false"-->
+<!--                android:text="Tài khoản"-->
+<!--                />-->
+<!--        </LinearLayout>-->
+<!--    </LinearLayout>-->
+<!--    <com.google.android.material.navigation.NavigationView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:id="@+id/nav_view"-->
+<!--        android:layout_gravity="start"-->
+<!--        app:headerLayout="@layout/activity_navigation_header"-->
+<!--        app:menu="@menu/navigation_menu">-->
+
+<!--    </com.google.android.material.navigation.NavigationView>-->
+<!--</androidx.drawerlayout.widget.DrawerLayout>-->
