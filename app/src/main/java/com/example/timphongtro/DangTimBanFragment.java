@@ -76,12 +76,8 @@ public class DangTimBanFragment extends Fragment {
             public void onClick(View v) {
                 xuLyThemMoi();
                 startActivity(Intent.makeMainActivity(getActivity().getComponentName()));
-
             }
         });
-
-
-        // Inflate the layout for this fragment
         return fragmentLayout;
     }
 
