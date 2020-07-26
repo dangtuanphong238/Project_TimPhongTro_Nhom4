@@ -15,6 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.testgooglelogin.R;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -62,6 +63,12 @@ public class OGhepFragment extends Fragment {
                 }
                 adapter = new RoomateAdapter(getContext(),arrayList);
                 recyclerView.setAdapter(adapter);
+//                Toast.makeText(getContext(),
+//                        "Welcome " + FirebaseAuth.getInstance()
+//                                .getCurrentUser()
+//                                .getDisplayName(),
+//                        Toast.LENGTH_LONG)
+//                        .show();
             }
 
             @Override

@@ -8,18 +8,28 @@ public class RoomateModel {
     private String ten;
     private String tuoi;
     private String diachi;
+    private String picture;
    // private String image;
 
 
     public RoomateModel() {
     }
 
-    public RoomateModel(String tinhtrang, String gioitinh, String ten, String tuoi, String diachi) {
+    public RoomateModel(String tinhtrang, String gioitinh, String ten, String tuoi, String diachi, String picture) {
         this.tinhtrang = tinhtrang;
         this.gioitinh = gioitinh;
         this.ten = ten;
         this.tuoi = tuoi;
         this.diachi = diachi;
+        this.picture = picture;
+    }
+
+    public String getPicture() {
+        return picture;
+    }
+
+    public void setPicture(String picture) {
+        this.picture = picture;
     }
 
     //    public String getImage() {

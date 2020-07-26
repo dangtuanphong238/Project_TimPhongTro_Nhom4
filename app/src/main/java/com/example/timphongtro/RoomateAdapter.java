@@ -1,6 +1,9 @@
 package com.example.timphongtro;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,7 +33,7 @@ public class RoomateAdapter extends RecyclerView.Adapter<RoomateAdapter.MyViewHo
     class MyViewHolder extends RecyclerView.ViewHolder
     {
         TextView txtName,txtGender,txtAddress,txtAge,txtTinhTrang;
-//        ImageView imgRoomate;
+        ImageView imgRoomate;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             txtName = itemView.findViewById(R.id.txtNameRoomate);
@@ -38,6 +41,7 @@ public class RoomateAdapter extends RecyclerView.Adapter<RoomateAdapter.MyViewHo
             txtGender = itemView.findViewById(R.id.txtGenderRoomate);
             txtAge = itemView.findViewById(R.id.txtAgeRoomate);
             txtTinhTrang = itemView.findViewById(R.id.txtTinhTrangPhong);
+            imgRoomate = itemView.findViewById(R.id.imgRoommate);
         }
     }
 
@@ -54,6 +58,11 @@ public class RoomateAdapter extends RecyclerView.Adapter<RoomateAdapter.MyViewHo
         holder.txtGender.setText("Giới Tính: " + arrayList.get(position).getGioitinh());
         holder.txtAddress.setText("Địa Chỉ: " + arrayList.get(position).getDiachi());
         holder.txtName.setText("Tên: " + arrayList.get(position).getTen());
+        if(arrayList.get(position).getPicture() != null) {
+            byte[] decodedString = Base64.decode(arrayList.get(position).getPicture(), Base64.DEFAULT);
+            Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+            holder.imgRoomate.setImageBitmap(decodedByte);
+        }
 //        Picasso.get().load(arrayList.get(position).getImage()).into(holder.imgRoomate);
     }
 
