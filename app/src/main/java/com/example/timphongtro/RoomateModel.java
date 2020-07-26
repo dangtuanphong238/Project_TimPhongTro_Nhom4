@@ -1,28 +1,28 @@
 package com.example.timphongtro;
 
 public class RoomateModel {
-    private String tinhTrang;
-    private String gioiTinh;
+
+
+    private String tinhtrang;
+    private String gioitinh;
     private String ten;
     private String tuoi;
-    private String diaChi;
+    private String diachi;
    // private String image;
 
 
     public RoomateModel() {
     }
 
-
-    public RoomateModel(String tinhTrang, String gioiTinh, String ten, String tuoi, String diaChi) {
-        this.tinhTrang = tinhTrang;
-        this.gioiTinh = gioiTinh;
+    public RoomateModel(String tinhtrang, String gioitinh, String ten, String tuoi, String diachi) {
+        this.tinhtrang = tinhtrang;
+        this.gioitinh = gioitinh;
         this.ten = ten;
         this.tuoi = tuoi;
-        this.diaChi = diaChi;
-//        this.image = image;
+        this.diachi = diachi;
     }
 
-//    public String getImage() {
+    //    public String getImage() {
 //        return image;
 //    }
 //
@@ -31,21 +31,6 @@ public class RoomateModel {
 //    }
 
 
-    public String getTinhTrang() {
-        return tinhTrang;
-    }
-
-    public void setTinhTrang(String tinhTrang) {
-        this.tinhTrang = tinhTrang;
-    }
-
-    public String getGioiTinh() {
-        return gioiTinh;
-    }
-
-    public void setGioiTinh(String gioiTinh) {
-        this.gioiTinh = gioiTinh;
-    }
 
     public String getTen() {
         return ten;
@@ -63,11 +48,27 @@ public class RoomateModel {
         this.tuoi = tuoi;
     }
 
-    public String getDiaChi() {
-        return diaChi;
+    public String getTinhtrang() {
+        return tinhtrang;
     }
 
-    public void setDiaChi(String diaChi) {
-        this.diaChi = diaChi;
+    public void setTinhtrang(String tinhtrang) {
+        this.tinhtrang = tinhtrang;
+    }
+
+    public String getGioitinh() {
+        return gioitinh;
+    }
+
+    public void setGioitinh(String gioitinh) {
+        this.gioitinh = gioitinh;
+    }
+
+    public String getDiachi() {
+        return diachi;
+    }
+
+    public void setDiachi(String diachi) {
+        this.diachi = diachi;
     }
 }

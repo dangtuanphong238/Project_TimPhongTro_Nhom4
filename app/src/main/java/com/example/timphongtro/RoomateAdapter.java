@@ -49,11 +49,11 @@ public class RoomateAdapter extends RecyclerView.Adapter<RoomateAdapter.MyViewHo
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.txtTinhTrang.setText(arrayList.get(position).getTinhTrang());
-        holder.txtAge.setText(arrayList.get(position).getTuoi());
-        holder.txtGender.setText(arrayList.get(position).getGioiTinh());
-        holder.txtAddress.setText(arrayList.get(position).getDiaChi());
-        holder.txtName.setText(arrayList.get(position).getTen());
+        holder.txtTinhTrang.setText("Tình Trạng: " + arrayList.get(position).getTinhtrang());
+        holder.txtAge.setText("Tuổi: " + arrayList.get(position).getTuoi());
+        holder.txtGender.setText("Giới Tính: " + arrayList.get(position).getGioitinh());
+        holder.txtAddress.setText("Địa Chỉ: " + arrayList.get(position).getDiachi());
+        holder.txtName.setText("Tên: " + arrayList.get(position).getTen());
 //        Picasso.get().load(arrayList.get(position).getImage()).into(holder.imgRoomate);
     }
 
