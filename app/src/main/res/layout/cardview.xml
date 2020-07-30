@@ -5,7 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:cardCornerRadius="4dp"
+<<<<<<< HEAD
     android:layout_marginBottom="@dimen/margin_bottom">
+=======
+    android:layout_marginBottom="@dimen/margin_bottom"
+    android:id="@+id/card_view"
+    >
+>>>>>>> TestOfDangTuanPhong
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,6 +19,7 @@
         android:orientation="horizontal"
         android:layout_margin="4dp"
         android:weightSum="3">
+<<<<<<< HEAD
 
         <LinearLayout
             android:layout_width="204dp"
@@ -25,6 +32,18 @@
                 android:layout_height="250px"
                 android:scaleType="fitXY"
                 android:src="@drawable/camera" />
+=======
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <ImageView
+                android:src="@drawable/camera"
+                android:scaleType="fitXY"
+                android:layout_width="250px"
+                android:layout_height="250px"
+                android:id="@+id/imgRoommate"/>
+>>>>>>> TestOfDangTuanPhong
         </LinearLayout>
 
         <LinearLayout

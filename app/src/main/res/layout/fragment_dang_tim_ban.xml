@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.example.timphongtro.DangPhongFragment"
+    tools:context="com.example.timphongtro.DangTimBanFragment"
     android:background="@drawable/background1"
     >
 
-    <!-- TODO: Update blank fragment layout -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -27,7 +25,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="@string/txtDangPhong"
+                android:text="Đăng Tìm Bạn"
                 android:textSize="30sp"
                 android:textStyle="bold"/>
             <LinearLayout
@@ -40,7 +38,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Loại Phòng:"
+                    android:text="Tình trạng:"
                     android:textSize="25sp"
                     android:textStyle="bold"/>
 
@@ -53,53 +51,21 @@
                     android:orientation="vertical">
 
                     <RadioButton
-                        android:id="@+id/rdKTX"
+                        android:id="@+id/rdDaCoPhong"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Kí túc xá/Homestay"
+                        android:text="Đã có phòng"
                         android:textSize="20sp"
                         android:checked="true"/>
 
                     <RadioButton
-                        android:id="@+id/rdPhongChoThue"
+                        android:id="@+id/rdChuaPhong"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Phòng cho thuê"
+                        android:text="Chưa có phòng"
                         android:textSize="20sp" />
 
-                    <RadioButton
-                        android:id="@+id/rdPhongOGhep"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Phòng ở ghép"
-                        android:textSize="20sp" />
-
-                    <RadioButton
-                        android:id="@+id/rdNhaNguyenCan"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Nhà nguyên căn"
-                        android:textSize="20sp" />
                 </RadioGroup>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginTop="@dimen/margin_top"
-                android:layout_weight="1">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Sức chứa:"
-                    android:textSize="25sp"
-                    android:textStyle="bold"/>
-                <EditText
-                    android:id="@+id/edtSucChua"
-                    android:layout_marginHorizontal="20dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Nhập vào số người..."/>
             </LinearLayout>
 
             <LinearLayout
@@ -156,15 +122,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="25sp"
-                    android:text="Diện tích"
+                    android:text="Tên"
                     android:textStyle="bold"/>
                 <EditText
 
-                    android:id="@+id/edtDienTich"
+                    android:id="@+id/edtTen"
                     android:layout_marginHorizontal="20dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Nhập vào diện tích..."/>
+                    android:hint="Nhập vào tên..."/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -176,15 +142,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="25sp"
-                    android:text="Chi phí"
+                    android:text="Tuổi"
                     android:textStyle="bold"/>
 
                 <EditText
-                    android:id="@+id/edtChiPhi"
+                    android:id="@+id/edtTuoi"
                     android:layout_marginHorizontal="20dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Nhập số tiền..."/>
+                    android:hint="Nhập vào tuổi..."/>
 
 
             </LinearLayout>
@@ -223,13 +189,13 @@
                     android:text="Ảnh"
                     android:textStyle="bold"/>
 
-                    <ImageButton
-                        android:layout_marginTop="@dimen/margin_top"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/choose"
-                        android:id="@+id/btnChoose"
-                        />
+                <ImageButton
+                    android:layout_marginTop="@dimen/margin_top"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/choose"
+                    android:id="@+id/btnChoose"
+                    />
 
                 <ImageView
                     android:id="@+id/imgView"
@@ -245,7 +211,7 @@
                 android:gravity="right|center_vertical"
                 android:layout_weight="1">
                 <Button
-                    android:id="@+id/btnDang"
+                    android:id="@+id/btnDangTim"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/bg_botton_white"
                     android:layout_width="wrap_content"
@@ -258,5 +224,4 @@
 
 
     </ScrollView>
-
 </FrameLayout>

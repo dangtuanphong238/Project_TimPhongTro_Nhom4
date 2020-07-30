@@ -41,7 +41,7 @@ public class LoginActivity extends AppCompatActivity {
     private TextView info;
     private LoginButton loginButton;
     private CallbackManager callbackManager;
-    private  static final String TAG = " FacenookAuthenticaaation ";
+    private  static final String TAG = "FacenookAuthenticaaation";
     Button btnGoogle;
     GoogleSignInClient mGoogleSignInClient;
     ProgressDialog mLoadingBar;

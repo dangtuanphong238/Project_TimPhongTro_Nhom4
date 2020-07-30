@@ -25,6 +25,8 @@ public class PageAdapter extends FragmentPagerAdapter {
             case 2:
                 return new DangPhongFragment();
             case 3:
+                return new DangTimBanFragment();
+            case 4:
                 return new TaiKhoanFragment();
                 default:
                     return null;

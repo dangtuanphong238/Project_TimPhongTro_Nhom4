@@ -129,12 +129,14 @@ public void xuLyThemMoi() {
     else if(rdNam.isChecked()) gioiTinh = rdNam.getText().toString();
     else if(rdNu.isChecked()) gioiTinh = rdNu.getText().toString();
 
+
     double dienTich = Double.parseDouble(edtDienTich.getText().toString());
     double chiPhi = Double.parseDouble(edtChiPhi.getText().toString());
     int sucChua = Integer.parseInt(edtSucChua.getText().toString());
     String diaChi = edtDiaChi.getText().toString();
+
     try {
-        DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReference().child("RoomA");
+        DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReference().child("RoomInfo");
         //Kết nối tới node có tên là contacts (node này do ta định nghĩa trong CSDL Firebase)
         String key = databaseRef.push().getKey();
         databaseRef.child(key).child("loaiphong").setValue(loaiPhong);
