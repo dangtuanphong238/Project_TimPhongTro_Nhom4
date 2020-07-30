@@ -1,72 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    app:cardCornerRadius="4dp"
-    android:layout_marginBottom="@dimen/margin_bottom"
-    android:id="@+id/card_view"
-    >
+    android:layout_height="match_parent"
+    tools:context="com.example.timphongtro.InfoRoommate">
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:layout_margin="4dp"
+        android:orientation="vertical"
         android:weightSum="3">
+        <ImageView
+            android:id="@+id/imgInfoRM"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_person"/>
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
-            <ImageView
-                android:src="@drawable/camera"
-                android:scaleType="fitXY"
-                android:layout_width="250px"
-                android:layout_height="250px"
-                android:id="@+id/imgRoommate"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="2"
             android:orientation="vertical">
-
             <TextView
                 android:id="@+id/txtNameRoomate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
-                android:textSize="15dp"/>
+                android:textSize="15dp"
+                android:layout_weight="1"/>
             <TextView
                 android:id="@+id/txtGenderRoomate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
-                android:textSize="15dp"/>
+                android:textSize="15dp"
+                android:layout_weight="1"/>
             <TextView
                 android:id="@+id/txtAgeRoomate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
-                android:textSize="15dp"/>
+                android:textSize="15dp"
+                android:layout_weight="1"/>
             <TextView
                 android:id="@+id/txtAddressRoomate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
-                android:textSize="15dp"/>
+                android:textSize="15dp"
+                android:layout_weight="1"/>
             <TextView
                 android:id="@+id/txtTinhTrangPhong"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
-                android:textSize="15dp"/>
+                android:textSize="15dp"
+                android:layout_weight="1"/>
         </LinearLayout>
-
     </LinearLayout>
-
-
-
-</androidx.cardview.widget.CardView>
+</FrameLayout>

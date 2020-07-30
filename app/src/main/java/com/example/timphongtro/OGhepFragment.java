@@ -1,16 +1,21 @@
 package com.example.timphongtro;
 
 
+import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -34,11 +39,11 @@ public class OGhepFragment extends Fragment {
     RecyclerView recyclerView;
     ArrayList<RoomateModel> arrayList;
     RoomateAdapter adapter;
+    ProgressDialog mLoadingBar;
+
     public OGhepFragment() {
         // Required empty public constructor
     }
-
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -53,30 +58,29 @@ public class OGhepFragment extends Fragment {
         arrayList = new ArrayList<RoomateModel>();
 
         reference = FirebaseDatabase.getInstance().getReference().child("RoomatesInfo");
+        mLoadingBar = new ProgressDialog(getContext());
+        mLoadingBar.setMessage("Đang tải dữ liệu...vui lòng chờ");
+        mLoadingBar.setCanceledOnTouchOutside(false);
+        mLoadingBar.show();
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for(DataSnapshot dataSnapshot1:dataSnapshot.getChildren())
-                {
+                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
                     RoomateModel roomateModel = dataSnapshot1.getValue(RoomateModel.class);
                     arrayList.add(roomateModel);
                 }
-                adapter = new RoomateAdapter(getContext(),arrayList);
+                adapter = new RoomateAdapter(getContext(), arrayList);
                 recyclerView.setAdapter(adapter);
-//                Toast.makeText(getContext(),
-//                        "Welcome " + FirebaseAuth.getInstance()
-//                                .getCurrentUser()
-//                                .getDisplayName(),
-//                        Toast.LENGTH_LONG)
-//                        .show();
+                mLoadingBar.dismiss();
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
                 Toast.makeText(getActivity(), "Opsss...something is wrong", Toast.LENGTH_SHORT).show();
             }
         });
+
         return layoutFragment;
     }
+
 
 }

@@ -112,6 +112,7 @@ public class DangTimBanFragment extends Fragment {
             byte[] byteArray = byteArrayOutputStream.toByteArray();
             String imgeEncoded = Base64.encodeToString(byteArray, Base64.DEFAULT);
             databaseRef.child(key).child("picture").setValue(imgeEncoded);
+            Toast.makeText(getActivity(), "Đăng thành công!", Toast.LENGTH_SHORT).show();
             getActivity().finish();
 
         } catch (Exception ex) {
