@@ -8,7 +8,11 @@
   "client": [
     {
       "client_info": {
+<<<<<<< Updated upstream
         "mobilesdk_app_id": "1:824913222027:android:6a65b1db28c2a5c3cff78e",
+=======
+        "mobilesdk_app_id": "1:824913222027:android:8fbf1178259990c1cff78e",
+>>>>>>> Stashed changes
         "android_client_info": {
           "package_name": "com.example.timphongtro"
         }
