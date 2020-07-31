@@ -40,7 +40,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Loại Phòng:"
+                    android:text="@string/loaiphong"
                     android:textSize="25sp"
                     android:textStyle="bold"/>
 
@@ -56,7 +56,7 @@
                         android:id="@+id/rdKTX"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Kí túc xá/Homestay"
+                        android:text="@string/ktx"
                         android:textSize="20sp"
                         android:checked="true"/>
 
@@ -64,21 +64,21 @@
                         android:id="@+id/rdPhongChoThue"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Phòng cho thuê"
+                        android:text="@string/phong_cho_thue"
                         android:textSize="20sp" />
 
                     <RadioButton
                         android:id="@+id/rdPhongOGhep"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Phòng ở ghép"
+                        android:text="@string/phong_o_ghep"
                         android:textSize="20sp" />
 
                     <RadioButton
                         android:id="@+id/rdNhaNguyenCan"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Nhà nguyên căn"
+                        android:text="@string/nha_nguyen_can"
                         android:textSize="20sp" />
                 </RadioGroup>
             </LinearLayout>
@@ -91,7 +91,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Sức chứa:"
+                    android:text="@string/suc_chua"
                     android:textSize="25sp"
                     android:textStyle="bold"/>
                 <EditText
@@ -99,7 +99,7 @@
                     android:layout_marginHorizontal="20dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Nhập vào số người..."/>
+                    android:hint="@string/nhap_so_nguoi"/>
             </LinearLayout>
 
             <LinearLayout
@@ -111,7 +111,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Giới tính:"
+                    android:text="@string/gioi_tinh"
                     android:textSize="25sp"
                     android:textStyle="bold"/>
                 <RadioGroup
@@ -127,21 +127,21 @@
                         android:checked="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Tất cả"
+                        android:text="@string/tat_ca"
                         android:textSize="20sp" />
 
                     <RadioButton
                         android:id="@+id/rdNam"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Nam"
+                        android:text="@string/nam"
                         android:textSize="20sp" />
 
                     <RadioButton
                         android:id="@+id/rdNu"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Nữ"
+                        android:text="@string/nu"
                         android:textSize="20sp" />
                 </RadioGroup>
             </LinearLayout>
@@ -156,7 +156,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="25sp"
-                    android:text="Diện tích"
+                    android:text="@string/dien_tich"
                     android:textStyle="bold"/>
                 <EditText
 
@@ -164,7 +164,7 @@
                     android:layout_marginHorizontal="20dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Nhập vào diện tích..."/>
+                    android:hint="@string/nhap_dien_tich"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -176,7 +176,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="25sp"
-                    android:text="Chi phí"
+                    android:text="@string/chi_phi"
                     android:textStyle="bold"/>
 
                 <EditText
@@ -184,7 +184,7 @@
                     android:layout_marginHorizontal="20dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Nhập số tiền..."/>
+                    android:hint="@string/nhap_so_tien"/>
 
 
             </LinearLayout>
@@ -199,7 +199,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="25sp"
-                    android:text="Địa chỉ"
+                    android:text="@string/dia_chi"
                     android:textStyle="bold"/>
 
                 <EditText
@@ -207,7 +207,7 @@
                     android:layout_marginHorizontal="20dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Nhập địa chỉ..."/>
+                    android:hint="@string/nhap_dia_chi"/>
             </LinearLayout>
 
             <LinearLayout
@@ -220,7 +220,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="25sp"
-                    android:text="Ảnh"
+                    android:text="@string/anh"
                     android:textStyle="bold"/>
 
                     <ImageButton
@@ -251,7 +251,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
-                    android:text="Đăng"/>
+                    android:text="@string/dang"/>
             </LinearLayout>
 
         </LinearLayout>

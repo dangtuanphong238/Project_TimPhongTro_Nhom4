@@ -24,7 +24,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/btn_bg"
-                android:text="Logout"
+                android:text="@string/logout"
                 android:layout_marginBottom="20dp"
                 />
 

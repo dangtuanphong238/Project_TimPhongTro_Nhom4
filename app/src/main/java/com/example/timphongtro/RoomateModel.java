@@ -1,12 +1,14 @@
 package com.example.timphongtro;
 
-public class RoomateModel {
+import java.io.Serializable;
+
+public class RoomateModel implements Serializable {
 
 
     private String tinhtrang;
     private String gioitinh;
     private String ten;
-    private String tuoi;
+    private int tuoi;
     private String diachi;
     private String picture;
    // private String image;
@@ -15,7 +17,7 @@ public class RoomateModel {
     public RoomateModel() {
     }
 
-    public RoomateModel(String tinhtrang, String gioitinh, String ten, String tuoi, String diachi, String picture) {
+    public RoomateModel(String tinhtrang, String gioitinh, String ten, int tuoi, String diachi, String picture) {
         this.tinhtrang = tinhtrang;
         this.gioitinh = gioitinh;
         this.ten = ten;
@@ -32,16 +34,6 @@ public class RoomateModel {
         this.picture = picture;
     }
 
-    //    public String getImage() {
-//        return image;
-//    }
-//
-//    public void setImage(String image) {
-//        this.image = image;
-//    }
-
-
-
     public String getTen() {
         return ten;
     }
@@ -50,11 +42,11 @@ public class RoomateModel {
         this.ten = ten;
     }
 
-    public String getTuoi() {
+    public int getTuoi() {
         return tuoi;
     }
 
-    public void setTuoi(String tuoi) {
+    public void setTuoi(int tuoi) {
         this.tuoi = tuoi;
     }
 

@@ -30,20 +30,18 @@ public class RoomateAdapter extends RecyclerView.Adapter<RoomateAdapter.MyViewHo
 
     Context context;
     ArrayList<RoomateModel> arrayList;
-    TextView txtName,txtGender,txtAddress,txtAge,txtTinhTrang;
+    TextView txtName, txtGender, txtAddress, txtAge, txtTinhTrang;
     ImageView imgRoomate;
     RecyclerView recyclerView;
     CardView cardView;
 
     //constructor
-    public RoomateAdapter(Context c, ArrayList<RoomateModel> arr)
-    {
+    public RoomateAdapter(Context c, ArrayList<RoomateModel> arr) {
         context = c;
         arrayList = arr;
     }
 
-    class MyViewHolder extends RecyclerView.ViewHolder
-    {
+    class MyViewHolder extends RecyclerView.ViewHolder {
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             txtName = itemView.findViewById(R.id.txtNameRoomate);
@@ -61,21 +59,33 @@ public class RoomateAdapter extends RecyclerView.Adapter<RoomateAdapter.MyViewHo
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull final ViewGroup parent, final int viewType) {
-        final View view = LayoutInflater.from(context).inflate(R.layout.cardview, parent,false);
+        final View view = LayoutInflater.from(context).inflate(R.layout.cardview, parent, false);
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context,InfoRoommate.class);
+                Intent intent = new Intent(context, InfoRoommate.class);
                 //get position khi đã click ở dưới
-                int pos = (int)v.getTag();
+                int pos = (int) v.getTag();
 
-                intent.putExtra("name",arrayList.get(pos).getTen());
-                intent.putExtra("gioitinh", arrayList.get(pos).getGioitinh());
-                intent.putExtra("tuoi", arrayList.get(pos).getTuoi());
-                intent.putExtra("diachi", arrayList.get(pos).getDiachi());
-                intent.putExtra("tinhtrangphong", arrayList.get(pos).getTinhtrang());
+//                intent.putExtra("name", arrayList.get(pos).getTen());
+//                intent.putExtra("gioitinh", arrayList.get(pos).getGioitinh());
+//                intent.putExtra("tuoi", arrayList.get(pos).getTuoi());
+//                intent.putExtra("diachi", arrayList.get(pos).getDiachi());
+//                intent.putExtra("tinhtrangphong", arrayList.get(pos).getTinhtrang());
 //                intent.putExtra("image", arrayList.get(pos).getPicture());
+
+
+//                RoomateModel roomate = new RoomateModel(arrayList.get(pos).getTinhtrang(),arrayList.get(pos).getGioitinh(),arrayList.get(pos).getTen()
+//                ,arrayList.get(pos).getTuoi(),arrayList.get(pos).getDiachi(),arrayList.get(pos).getPicture());
+//                intent.putExtra("roommate", roomate);
+//                context.startActivity(intent);
+
+                if (arrayList.get(pos).getPicture() != null) {
+                    byte[] decodedString = Base64.decode(arrayList.get(pos).getPicture(), Base64.DEFAULT);
+                    intent.putExtra("decoded",decodedString);
+                }
                 context.startActivity(intent);
+
             }
         });
 
@@ -90,7 +100,7 @@ public class RoomateAdapter extends RecyclerView.Adapter<RoomateAdapter.MyViewHo
         txtGender.setText("Giới Tính: " + arrayList.get(position).getGioitinh());
         txtAddress.setText("Địa Chỉ: " + arrayList.get(position).getDiachi());
         txtName.setText("Tên: " + arrayList.get(position).getTen());
-        if(arrayList.get(position).getPicture() != null) {
+        if (arrayList.get(position).getPicture() != null) {
             byte[] decodedString = Base64.decode(arrayList.get(position).getPicture(), Base64.DEFAULT);
             Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
             imgRoomate.setImageBitmap(decodedByte);

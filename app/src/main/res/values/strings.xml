@@ -1,26 +1,42 @@
 <resources>
     <string name="app_name">TimPhong</string>
-    <string name="title_activity_navigation">NavigationActivity</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
-    <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
-
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
-    <string name="menu_tools">Tools</string>
-    <string name="menu_share">Share</string>
-    <string name="menu_send">Send</string>
-    <string name="Open">Open</string>
-    <string name="Close">Close</string>
-
     <string name="txtDangPhong">Đăng Phòng</string>
     <string name="facebook_app_id">1095348340818785</string>
     <string name="fb_login_protocol_scheme">fb1095348340818785</string>
-
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="dont_account">Dont have an Account?</string>
+    <string name="sign_up">SignUp</string>
+    <string name="google">Google</string>
+    <string name="timkiem">Tìm Kiếm</string>
+    <string name="oghep">Ở Ghép</string>
+    <string name="dangphong">Đăng Phòng</string>
+    <string name="dangtimban">Đăng Tìm Bạn</string>
+    <string name="taikhoan">Tài Khoản</string>
+    <string name="register">Register</string>
+    <string name="username">Username</string>
+    <string name="hint">******</string>
+    <string name="have_account">Already Have an Account?</string>
+    <string name="loaiphong">Loại Phòng:</string>
+    <string name="ktx">Kí túc xá</string>
+    <string name="phong_cho_thue">Phòng cho thuê</string>
+    <string name="phong_o_ghep">Phòng ở ghép</string>
+    <string name="nha_nguyen_can">Nhà nguyên căn</string>
+    <string name="suc_chua">Sức chứa:</string>
+    <string name="nhap_so_nguoi">Nhập vào số người...</string>
+    <string name="gioi_tinh">Giới tính:</string>
+    <string name="tat_ca">Tất cả</string>
+    <string name="nam">Nam</string>
+    <string name="nu">Nữ</string>
+    <string name="dien_tich">Diện tích</string>
+    <string name="nhap_dien_tich">Nhập vào diện tích...</string>
+    <string name="chi_phi">Chi phí</string>
+    <string name="nhap_so_tien">Nhập số tiền...</string>
+    <string name="dia_chi">Địa chỉ</string>
+    <string name="nhap_dia_chi">Nhập địa chỉ...</string>
+    <string name="anh">Ảnh</string>
+    <string name="dang">Đăng</string>
+    <string name="logout">Logout</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 

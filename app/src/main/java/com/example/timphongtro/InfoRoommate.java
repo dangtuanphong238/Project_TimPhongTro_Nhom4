@@ -24,6 +24,7 @@ import com.example.testgooglelogin.R;
 public class InfoRoommate extends AppCompatActivity {
     TextView txtNameRM, txtGioiTinhRM, txtTuoiRM, txtDiaChiRM, txtTinhTrangPhong;
     ImageView imgRM;
+    private RoomateModel roomate;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,14 +32,29 @@ public class InfoRoommate extends AppCompatActivity {
         anhXa();
 
         Bundle extras = getIntent().getExtras();
-        txtNameRM.setText(extras.getString("name"));
-        txtTuoiRM.setText(extras.getString("tuoi"));
-        txtGioiTinhRM.setText(extras.getString("gioitinh"));
-        txtDiaChiRM.setText(extras.getString("diachi"));
-        txtTinhTrangPhong.setText(extras.getString("tinhtrangphong"));
+//        txtNameRM.setText(extras.getString("name"));
+//        txtTuoiRM.setText(extras.getString("tuoi"));
+//        txtGioiTinhRM.setText(extras.getString("gioitinh"));
+//        txtDiaChiRM.setText(extras.getString("diachi"));
+//        txtTinhTrangPhong.setText(extras.getString("tinhtrangphong"));
 
+//        Intent intent = getIntent();
+//        roomate = (RoomateModel) intent.getSerializableExtra("roommate");
+//        setUpRoommate();
 
+        byte[] decoded = extras.getByteArray("decoded");
+        Bitmap decodedByte = BitmapFactory.decodeByteArray(decoded, 0, decoded.length);
+        imgRM.setImageBitmap(decodedByte);
 
+    }
+
+    private void setUpRoommate()
+    {
+        txtNameRM.setText(roomate.getTen());
+        txtTuoiRM.setText(roomate.getTuoi());
+        txtGioiTinhRM.setText(roomate.getGioitinh());
+        txtDiaChiRM.setText(roomate.getDiachi());
+        txtTinhTrangPhong.setText(roomate.getTinhtrang());
     }
 
     private void anhXa()
