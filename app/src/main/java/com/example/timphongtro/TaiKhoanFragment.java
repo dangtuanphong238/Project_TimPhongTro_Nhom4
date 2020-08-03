@@ -58,7 +58,7 @@ public class TaiKhoanFragment extends Fragment {
                 startActivity(intent);
             }
         });
-        btnUpdateProfile = fragmentLayout.findViewById(R.id.btnUpdateProfile);
+//        btnUpdateProfile = fragmentLayout.findViewById(R.id.btnUpdateProfile);
        
         return fragmentLayout;
     }

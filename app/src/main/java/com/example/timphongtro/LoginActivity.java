@@ -37,6 +37,7 @@ public class LoginActivity extends AppCompatActivity {
     private CallbackManager callbackManager;
     private  static final String TAG = "FacenookAuthenticaaation";
     ImageView btnGoogle;
+    ImageView btnPhone;
     GoogleSignInClient mGoogleSignInClient;
     ProgressDialog mLoadingBar;
     TextView txtSignUp;
@@ -104,6 +105,14 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        btnPhone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, LoginPhoneActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                startActivity(intent);
+            }
+        });
     }
 
     private void checkCrededentials() {
@@ -152,6 +161,7 @@ public class LoginActivity extends AppCompatActivity {
     private void anhXa()
     {
         btnGoogle = findViewById(R.id.btnGoogle);
+        btnPhone = findViewById(R.id.btnPhone);
         txtSignUp = findViewById(R.id.textViewSignUp);
         btnLogin = findViewById(R.id.btnlogin);
         inputEmail = findViewById(R.id.inputEmail);
