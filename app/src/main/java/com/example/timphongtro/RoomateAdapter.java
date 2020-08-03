@@ -67,11 +67,11 @@ public class RoomateAdapter extends RecyclerView.Adapter<RoomateAdapter.MyViewHo
                 //get position khi đã click ở dưới
                 int pos = (int) v.getTag();
 
-//                intent.putExtra("name", arrayList.get(pos).getTen());
-//                intent.putExtra("gioitinh", arrayList.get(pos).getGioitinh());
-//                intent.putExtra("tuoi", arrayList.get(pos).getTuoi());
-//                intent.putExtra("diachi", arrayList.get(pos).getDiachi());
-//                intent.putExtra("tinhtrangphong", arrayList.get(pos).getTinhtrang());
+                intent.putExtra("name", arrayList.get(pos).getTen());
+                intent.putExtra("gioitinh", arrayList.get(pos).getGioitinh());
+                intent.putExtra("tuoi", arrayList.get(pos).getTuoi());
+                intent.putExtra("diachi", arrayList.get(pos).getDiachi());
+                intent.putExtra("tinhtrangphong", arrayList.get(pos).getTinhtrang());
 //                intent.putExtra("image", arrayList.get(pos).getPicture());
 
 

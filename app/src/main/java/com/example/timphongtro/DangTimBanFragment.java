@@ -4,6 +4,7 @@ package com.example.timphongtro;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -35,7 +36,7 @@ import static android.app.Activity.RESULT_OK;
  * A simple {@link Fragment} subclass.
  */
 public class DangTimBanFragment extends Fragment {
-    private int PICK_IMAGE_REQUEST = 1;
+    private int PICK_IMAGE_REQUEST = 10;
     private String TINH_TRANG = "tinhtrang";
     private String GIOI_TINH = "gioitinh";
     private String TEN = "ten";
@@ -139,10 +140,11 @@ public class DangTimBanFragment extends Fragment {
 
 //đưa bitmap về base64string:
                 ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-                selectedBitmap.compress(Bitmap.CompressFormat.PNG, PICK_IMAGE_REQUEST, byteArrayOutputStream);
+                selectedBitmap.compress(Bitmap.CompressFormat.JPEG, PICK_IMAGE_REQUEST, byteArrayOutputStream);
                 byte[] byteArray = byteArrayOutputStream.toByteArray();
                 String imgeEncoded = Base64.encodeToString(byteArray, Base64.DEFAULT);
                 databaseRef.child(key).child(PICTURE).setValue(imgeEncoded);
+
                 Toast.makeText(getActivity(), "Đăng thành công!", Toast.LENGTH_SHORT).show();
                 getActivity().finish();
                 isCompleted = true;
@@ -152,6 +154,24 @@ public class DangTimBanFragment extends Fragment {
         }
 
 
+    }
+
+
+    public static int calculateInSampleSize(
+            BitmapFactory.Options options, int reqWidth, int reqHeight) {
+        // Raw height and width of image
+        final int height = options.outHeight;
+        final int width = options.outWidth;
+        int inSampleSize = 1;
+
+        if (height > reqHeight || width > reqWidth) {
+            if (width > height) {
+                inSampleSize = Math.round((float)height / (float)reqHeight);
+            } else {
+                inSampleSize = Math.round((float)width / (float)reqWidth);
+            }
+        }
+        return inSampleSize;
     }
 
     private void showError(EditText input, String s) {
@@ -181,5 +201,7 @@ public class DangTimBanFragment extends Fragment {
             }
         }
     }
+
+
 
 }

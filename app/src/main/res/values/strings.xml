@@ -32,11 +32,15 @@
     <string name="nhap_dien_tich">Nhập vào diện tích...</string>
     <string name="chi_phi">Chi phí</string>
     <string name="nhap_so_tien">Nhập số tiền...</string>
-    <string name="dia_chi">Địa chỉ</string>
+    <string name="dia_chi">Địa chỉ:</string>
     <string name="nhap_dia_chi">Nhập địa chỉ...</string>
     <string name="anh">Ảnh</string>
     <string name="dang">Đăng</string>
     <string name="logout">Logout</string>
+    <string name="name">Tên:</string>
+    <string name="tuoi">Tuổi:</string>
+    <string name="tinhtrang">Tình trạng:</string>
+    <string name="btn_chat">Chat Now</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
