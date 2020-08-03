@@ -23,11 +23,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.timphongtro.MainActivity" />
+        <activity android:name="com.example.timphongtro.MainActivity" android:theme="@style/AppTheme.FullScreen"/>
         <activity android:name="com.example.timphongtro.RegisterActivity"
             android:theme="@style/AppTheme.FullScreen"/>
-        <activity android:name="post_room.PostRoomActivity" />
-        <activity android:name="com.example.timphongtro.InfoRoommate" />
+        <activity android:name="post_room.PostRoomActivity" android:theme="@style/AppTheme.FullScreen"/>
+        <activity android:name="com.example.timphongtro.InfoRoommate" android:theme="@style/AppTheme.FullScreen"/>
     </application>
 
 </manifest>

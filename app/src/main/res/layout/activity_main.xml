@@ -7,6 +7,7 @@
     android:orientation="vertical"
     tools:context="com.example.timphongtro.MainActivity"
     android:weightSum="10">
+ 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabBar"
         android:layout_width="match_parent"
@@ -20,23 +21,27 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/timkiem"
+            android:icon="@drawable/ic_home_24dp"
             android:id="@+id/TabSearch"/>
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/oghep"
+            android:icon="@drawable/ic_people_24dp"
             android:id="@+id/TabGhep"/>
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:icon="@drawable/ic_location_city_24dp"
             android:text="@string/dangphong"
             android:id="@+id/TabDangPhong"/>
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:icon="@drawable/ic_group_add_24dp"
             android:text="@string/dangtimban"
             android:id="@+id/TabDangTimBan"/>
 
@@ -44,6 +49,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/taikhoan"
+            android:icon="@drawable/ic_person"
             android:id="@+id/TabTaiKhoan"/>
 
     </com.google.android.material.tabs.TabLayout>

@@ -5,8 +5,8 @@
     <string name="fb_login_protocol_scheme">fb1095348340818785</string>
     <string name="login">Login</string>
     <string name="email">Email</string>
-    <string name="dont_account">Dont have an Account?</string>
-    <string name="sign_up">SignUp</string>
+    <string name="dont_account">New User? Register Now</string>
+    <string name="sign_up">Sign Up</string>
     <string name="google">Google</string>
     <string name="timkiem">Tìm Kiếm</string>
     <string name="oghep">Ở Ghép</string>
@@ -16,7 +16,7 @@
     <string name="register">Register</string>
     <string name="username">Username</string>
     <string name="hint">******</string>
-    <string name="have_account">Already Have an Account?</string>
+    <string name="have_account">Have an Account? Sign In Now</string>
     <string name="loaiphong">Loại Phòng:</string>
     <string name="ktx">Kí túc xá</string>
     <string name="phong_cho_thue">Phòng cho thuê</string>
@@ -41,6 +41,8 @@
     <string name="tuoi">Tuổi:</string>
     <string name="tinhtrang">Tình trạng:</string>
     <string name="btn_chat">Chat Now</string>
+    <string name="retype_pass">Retype Password</string>
+    <string name="sign_in">Sign In</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 

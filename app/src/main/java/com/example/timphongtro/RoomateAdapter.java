@@ -4,26 +4,19 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.os.Bundle;
 import android.util.Base64;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.testgooglelogin.R;
-import com.squareup.picasso.Picasso;
 
-import java.io.ByteArrayOutputStream;
-import java.io.FileOutputStream;
 import java.util.ArrayList;
 
 public class RoomateAdapter extends RecyclerView.Adapter<RoomateAdapter.MyViewHolder> {
@@ -59,7 +52,7 @@ public class RoomateAdapter extends RecyclerView.Adapter<RoomateAdapter.MyViewHo
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull final ViewGroup parent, final int viewType) {
-        final View view = LayoutInflater.from(context).inflate(R.layout.cardview, parent, false);
+        final View view = LayoutInflater.from(context).inflate(R.layout.cardview_o_ghep, parent, false);
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
