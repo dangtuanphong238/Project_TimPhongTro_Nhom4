@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.example.timphongtro.DangPhongFragment"
+    tools:context="com.example.timphongtro.DangTimBanFragment"
     android:background="@drawable/ic_wave_room"
     >
 
-    <!-- TODO: Update blank fragment layout -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -27,7 +25,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="@string/txtDangPhong"
+                android:text="Đăng Tìm Bạn"
                 android:textSize="30sp"
                 android:textStyle="bold"/>
             <LinearLayout
@@ -40,7 +38,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/loaiphong"
+                    android:text="Tình trạng:"
                     android:textSize="25sp"
                     android:textStyle="bold"/>
 
@@ -53,54 +51,22 @@
                     android:orientation="vertical">
 
                     <RadioButton
-                        android:id="@+id/rdKTX"
+                        android:id="@+id/rdDaCoPhong"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/ktx"
+                        android:text="Đã có phòng"
                         android:textSize="20sp"
                         android:checked="true"/>
 
                     <RadioButton
-                        android:id="@+id/rdPhongChoThue"
+                        android:id="@+id/rdChuaPhong"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/phong_cho_thue"
+                        android:text="Chưa có phòng"
                         android:textSize="20sp" />
 
-                    <RadioButton
-                        android:id="@+id/rdPhongOGhep"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/phong_o_ghep"
-                        android:textSize="20sp" />
-
-                    <RadioButton
-                        android:id="@+id/rdNhaNguyenCan"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/nha_nguyen_can"
-                        android:textSize="20sp" />
                 </RadioGroup>
             </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginTop="@dimen/margin_top"
-                android:layout_weight="1">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/suc_chua"
-                    android:textSize="25sp"
-                    android:textStyle="bold"/>
-                <EditText
-                    android:id="@+id/edtSucChua"
-                    android:layout_marginHorizontal="20dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/nhap_so_nguoi"/>
-            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -111,7 +77,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/gioi_tinh"
+                    android:text="Giới tính:"
                     android:textSize="25sp"
                     android:textStyle="bold"/>
                 <RadioGroup
@@ -119,29 +85,22 @@
                     android:layout_height="0dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="20dp"
-                    android:layout_weight="3"
+                    android:layout_weight="2"
                     android:orientation="vertical">
 
                     <RadioButton
-                        android:id="@+id/rdTatCa"
+                        android:id="@+id/rdNam"
                         android:checked="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/tat_ca"
-                        android:textSize="20sp" />
-
-                    <RadioButton
-                        android:id="@+id/rdNam"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/nam"
+                        android:text="Nam"
                         android:textSize="20sp" />
 
                     <RadioButton
                         android:id="@+id/rdNu"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/nu"
+                        android:text="Nữ"
                         android:textSize="20sp" />
                 </RadioGroup>
             </LinearLayout>
@@ -156,15 +115,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="25sp"
-                    android:text="@string/dien_tich"
+                    android:text="Tên"
                     android:textStyle="bold"/>
                 <EditText
 
-                    android:id="@+id/edtDienTich"
+                    android:id="@+id/edtTen"
                     android:layout_marginHorizontal="20dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/nhap_dien_tich"/>
+                    android:hint="Nhập vào tên..."/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -176,15 +135,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="25sp"
-                    android:text="@string/chi_phi"
+                    android:text="Tuổi"
                     android:textStyle="bold"/>
 
                 <EditText
-                    android:id="@+id/edtChiPhi"
+                    android:id="@+id/edtTuoi"
                     android:layout_marginHorizontal="20dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/nhap_so_tien"/>
+                    android:hint="Nhập vào tuổi..."/>
 
 
             </LinearLayout>
@@ -199,7 +158,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="25sp"
-                    android:text="@string/dia_chi"
+                    android:text="Địa chỉ"
                     android:textStyle="bold"/>
 
                 <EditText
@@ -207,7 +166,7 @@
                     android:layout_marginHorizontal="20dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/nhap_dia_chi"/>
+                    android:hint="Nhập địa chỉ..."/>
             </LinearLayout>
 
             <LinearLayout
@@ -220,16 +179,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="25sp"
-                    android:text="@string/anh"
+                    android:text="Ảnh"
                     android:textStyle="bold"/>
 
-                    <ImageButton
-                        android:layout_marginTop="@dimen/margin_top"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/choose"
-                        android:id="@+id/btnChoose"
-                        />
+                <ImageButton
+                    android:layout_marginTop="@dimen/margin_top"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/choose"
+                    android:id="@+id/btnChoose"
+                    />
 
                 <ImageView
                     android:id="@+id/imgView"
@@ -245,18 +204,17 @@
                 android:gravity="right|center_vertical"
                 android:layout_weight="1">
                 <Button
-                    android:id="@+id/btnDang"
+                    android:id="@+id/btnDangTim"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/bg_botton_white"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
-                    android:text="@string/dang"/>
+                    android:text="Đăng"/>
             </LinearLayout>
 
         </LinearLayout>
 
 
     </ScrollView>
-
 </FrameLayout>

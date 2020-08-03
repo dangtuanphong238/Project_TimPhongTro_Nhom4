@@ -88,32 +88,7 @@ public class DangPhongFragment extends Fragment {
         return fragmentLayout;
     }
 
-//    private String getFileExtension(Uri uri) {
-//        ContentResolver cR = getContext().getContentResolver();
-//        MimeTypeMap mime = MimeTypeMap.getSingleton();
-//        return mime.getExtensionFromMimeType(cR.getType(uri));
-//    }
-//    private void uploadImage() {
-//
-//        StorageReference Ref = mStorageRef.child(System.currentTimeMillis()+"."+getFileExtension(mImageUri));
-//        Ref.putFile(mImageUri)
-//                .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-//                    @Override
-//                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-//                        // Get a URL to the uploaded content
-////                        Uri downloadUrl = taskSnapshot.getDownloadUrl();
-//                        Toast.makeText(getActivity().getApplication(), "Completed", Toast.LENGTH_SHORT).show();
-//                    }
-//                })
-//                .addOnFailureListener(new OnFailureListener() {
-//                    @Override
-//                    public void onFailure(@NonNull Exception exception) {
-//                        // Handle unsuccessful uploads
-//                        // ...
-//                    }
-//                });
-//    }
-//
+
 public void xuLyThemMoi() {
 
     //get data Loai phòng
@@ -133,8 +108,9 @@ public void xuLyThemMoi() {
     double chiPhi = Double.parseDouble(edtChiPhi.getText().toString());
     int sucChua = Integer.parseInt(edtSucChua.getText().toString());
     String diaChi = edtDiaChi.getText().toString();
+
     try {
-        DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReference().child("RoomA");
+        DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReference().child("RoomInfo");
         //Kết nối tới node có tên là contacts (node này do ta định nghĩa trong CSDL Firebase)
         String key = databaseRef.push().getKey();
         databaseRef.child(key).child("loaiphong").setValue(loaiPhong);

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.testgooglelogin">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -13,20 +14,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name="com.example.timphongtro.EditProfileActivity"></activity>
-        <activity android:name="com.example.timphongtro.ProfileAdapter" />
-        <activity android:name="com.example.timphongtro.AddProfileActivity" />
-        <activity android:name="com.example.timphongtro.LoginPhoneActivity" />
-        <activity android:name="com.example.timphongtro.LoginActivity">
+        <activity android:name="com.example.timphongtro.ChatActivity"></activity>
+        <activity android:name="com.example.timphongtro.LoginActivity"
+            android:theme="@style/AppTheme.FullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.timphongtro.MainActivity" />
-        <activity android:name="com.example.timphongtro.RegisterActivity" />
-        <activity android:name="post_room.PostRoomActivity" />
+        <activity android:name="com.example.timphongtro.MainActivity" android:theme="@style/AppTheme.FullScreen"/>
+        <activity android:name="com.example.timphongtro.RegisterActivity"
+            android:theme="@style/AppTheme.FullScreen"/>
+        <activity android:name="post_room.PostRoomActivity" android:theme="@style/AppTheme.FullScreen"/>
+        <activity android:name="com.example.timphongtro.InfoRoommate" android:theme="@style/AppTheme.FullScreen"/>
     </application>
 
 </manifest>
