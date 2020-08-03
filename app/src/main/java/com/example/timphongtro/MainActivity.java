@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         TabItem tabDangPhong = findViewById(R.id.TabDangPhong);
         TabItem tabOGhep = findViewById(R.id.TabGhep);
         TabItem tabTaiKhoan = findViewById(R.id.TabTaiKhoan);
+        TabItem tabDangTimBan = findViewById(R.id.TabDangTimBan);
         final ViewPager viewPager = findViewById(R.id.viewPager);
 
         PageAdapter pageAdapter = new PageAdapter(getSupportFragmentManager(),tabLayout.getTabCount());

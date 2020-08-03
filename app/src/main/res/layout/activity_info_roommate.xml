@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.timphongtro.InfoRoommate"
+    android:layout_margin="@dimen/margin_top">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="3">
+        <ImageView
+            android:id="@+id/imgInfoRM"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_person"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/txtNameRoomate"
+                    android:textAlignment="center"
+                    android:hint="@string/name"
+                    style="@style/lblInfoRoomate"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+                <TextView
+                    style="@style/lblInfoRoomate"
+                    android:text="@string/gioi_tinh"/>
+                <TextView
+                    android:id="@+id/txtGenderRoomate"
+                    style="@style/txtInfoRoomate"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+                <TextView
+                    style="@style/lblInfoRoomate"
+                    android:text="@string/tuoi"/>
+                <TextView
+                    android:id="@+id/txtAgeRoomate"
+                    style="@style/txtInfoRoomate"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+                <TextView
+                    style="@style/lblInfoRoomate"
+                    android:text="@string/dia_chi"/>
+                <TextView
+                    android:id="@+id/txtAddressRoomate"
+                    style="@style/txtInfoRoomate"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+                <TextView
+                    style="@style/lblInfoRoomate"
+                    android:text="@string/tinhtrang"/>
+
+                <TextView
+                    android:id="@+id/txtTinhTrangPhong"
+                    style="@style/txtInfoRoomate"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center">
+                <Button
+                    android:id="@+id/btnChat"
+                    android:layout_marginTop="@dimen/margin_top"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/custom_button_single"
+                    android:text="@string/btn_chat"
+                    android:layout_marginBottom="20dp"
+                    android:textAllCaps="false"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>
