@@ -60,41 +60,31 @@ public class RegisterActivity extends AppCompatActivity {
         String password = inputPassword.getText().toString();
         String email = inputEmail.getText().toString();
         String confirmPassword = inputConfirmPassword.getText().toString();
-        if(username.isEmpty() || username.length()<7)
-        {
+
+        if (email.isEmpty() || !email.contains("@")) {
+            showError(inputEmail, "Email is not valid");
+        } else if (username.isEmpty() || username.length() < 7) {
             showError(inputUsername, "Your username is not valid");
-        }
-        else if(password.isEmpty() || password.length()<7)
-        {
+        } else if (password.isEmpty() || password.length() < 7) {
             showError(inputPassword, "Password must be 7 characters");
-        }
-        else if(email.isEmpty() || !email.contains("@"))
-        {
-            showError(inputPassword, "Email is not valid");
-        }
-        else if(confirmPassword.isEmpty() || !confirmPassword.equals(password))
-        {
+        } else if (confirmPassword.isEmpty() || !confirmPassword.equals(password)) {
             showError(inputConfirmPassword, "Password not match!");
-        }
-        else
-        {
+        } else {
             mLoadingBar.setTitle("Registeration");
             mLoadingBar.setMessage("Please wait while check your credentials");
             mLoadingBar.setCanceledOnTouchOutside(false);
             mLoadingBar.show();
 
-            mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
-                    if(task.isSuccessful())
-                    {
+                    if (task.isSuccessful()) {
                         Toast.makeText(RegisterActivity.this, "Successfully registration", Toast.LENGTH_SHORT).show();
                         mLoadingBar.dismiss();
                         Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
-                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(intent);
-                    }
-                    else {
+                    } else {
                         Toast.makeText(RegisterActivity.this, task.getException().toString(), Toast.LENGTH_SHORT).show();
                     }
                 }

@@ -31,7 +31,7 @@
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_person" />
+        app:srcCompat="@drawable/ic_person_add_100dp" />
 
     <TextView
         android:id="@+id/textView"
