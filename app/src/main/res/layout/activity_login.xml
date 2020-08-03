@@ -107,7 +107,7 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="@dimen/margin_r_l"
         android:text="Or"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -131,6 +131,7 @@
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="20dp"
+        android:layout_marginTop="@dimen/margin_r_l"
         android:layout_marginStart="@dimen/margin_r_l"
         android:layout_marginEnd="@dimen/margin_r_l"
         android:orientation="horizontal"
@@ -140,17 +141,23 @@
 
         <ImageView
             android:id="@+id/btnGoogle"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             app:srcCompat="@drawable/google" />
 
         <ImageView
             android:id="@+id/btnFacebook"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             app:srcCompat="@drawable/facebook" />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_phone_blue_24dp"/>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
