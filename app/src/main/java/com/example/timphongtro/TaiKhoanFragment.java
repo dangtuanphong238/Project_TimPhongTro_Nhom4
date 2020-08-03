@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.testgooglelogin.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -20,10 +21,13 @@ import com.google.firebase.auth.FirebaseAuth;
  */
 public class TaiKhoanFragment extends Fragment {
     Button btnLogout;
+    Button btnUpdateProfile;
     FirebaseAuth mAuth;
 
     public TaiKhoanFragment() {
         // Required empty public constructor
+
+
     }
 
 
@@ -36,6 +40,14 @@ public class TaiKhoanFragment extends Fragment {
         // Inflate the layout for this fragment
         btnLogout = fragmentLayout.findViewById(R.id.btnlogout);
         mAuth = FirebaseAuth.getInstance();
+//        -----
+        FirebaseAuth.getInstance().getCurrentUser().getDisplayName();
+        Toast.makeText(getContext(),
+                "Welcome " + FirebaseAuth.getInstance()
+                        .getCurrentUser()
+                        .getDisplayName(),
+                Toast.LENGTH_LONG)
+                .show();
 
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,7 +58,8 @@ public class TaiKhoanFragment extends Fragment {
                 startActivity(intent);
             }
         });
-
+        btnUpdateProfile = fragmentLayout.findViewById(R.id.btnUpdateProfile);
+       
         return fragmentLayout;
     }
 

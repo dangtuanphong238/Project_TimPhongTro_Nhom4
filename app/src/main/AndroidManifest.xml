@@ -13,7 +13,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name="com.example.timphongtro.LoginPhoneActivity"></activity>
+        <activity android:name="com.example.timphongtro.EditProfileActivity"></activity>
+        <activity android:name="com.example.timphongtro.ProfileAdapter" />
+        <activity android:name="com.example.timphongtro.AddProfileActivity" />
+        <activity android:name="com.example.timphongtro.LoginPhoneActivity" />
         <activity android:name="com.example.timphongtro.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,7 +24,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.timphongtro.MainActivity"></activity>
+        <activity android:name="com.example.timphongtro.MainActivity" />
         <activity android:name="com.example.timphongtro.RegisterActivity" />
         <activity android:name="post_room.PostRoomActivity" />
     </application>
