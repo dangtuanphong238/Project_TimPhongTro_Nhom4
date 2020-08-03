@@ -19,7 +19,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class RegisterActivity extends AppCompatActivity {
-    TextView btn;
+    TextView txtSignIn;
     private EditText inputUsername, inputPassword, inputEmail, inputConfirmPassword;
     Button btnRegister;
     private FirebaseAuth mAuth;
@@ -37,10 +37,12 @@ public class RegisterActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         mLoadingBar = new ProgressDialog(RegisterActivity.this);
         //
-        btn.setOnClickListener(new View.OnClickListener() {
+        txtSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                startActivity(intent);
             }
         });
         btnRegister.setOnClickListener(new View.OnClickListener() {
@@ -107,10 +109,10 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void anhXa()
     {
-        btn = findViewById(R.id.alreadyHaveAccount);
+        txtSignIn = findViewById(R.id.alreadyHaveAccount);
         inputUsername = findViewById(R.id.inputUsername);
         inputPassword = findViewById(R.id.inputPassword);
-        inputConfirmPassword = findViewById(R.id.inputConformPassword);
+        inputConfirmPassword = findViewById(R.id.inputRetypePass);
         inputEmail = findViewById(R.id.inputEmail);
         btnRegister = findViewById(R.id.btnRegister);
     }

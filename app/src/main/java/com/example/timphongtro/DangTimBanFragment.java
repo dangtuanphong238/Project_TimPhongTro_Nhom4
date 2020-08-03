@@ -4,6 +4,7 @@ package com.example.timphongtro;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -35,12 +36,20 @@ import static android.app.Activity.RESULT_OK;
  * A simple {@link Fragment} subclass.
  */
 public class DangTimBanFragment extends Fragment {
-    private int PICK_IMAGE_REQUEST = 1;
+    private int PICK_IMAGE_REQUEST = 10;
+    private String TINH_TRANG = "tinhtrang";
+    private String GIOI_TINH = "gioitinh";
+    private String TEN = "ten";
+    private String TUOI = "tuoi";
+    private String DIA_CHI = "diachi";
+    private String PICTURE = "picture";
+
     RadioButton rdCoPhong, rdChuaCoPhong, rdTatCa, rdNam, rdNu;
     EditText edtTen,edtTuoi,edtDiaChi;
     ImageView imgView;
     ImageButton btnChoose;
     Button btnDangTim;
+
     public Uri mImageUri;
     Bitmap selectedBitmap;
     private ProgressDialog mLoadingBar;
@@ -115,26 +124,27 @@ public class DangTimBanFragment extends Fragment {
             showError(edtDiaChi, "Address is not valid");
         }
         else {
-            mLoadingBar.setTitle("Registeration");
-            mLoadingBar.setMessage("Please wait while check your credentials");
+            mLoadingBar.setTitle("Đang đăng...");
+            mLoadingBar.setMessage("Vui lòng chờ trong giây lát...");
             mLoadingBar.setCanceledOnTouchOutside(false);
             mLoadingBar.show();
             try {
                 DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReference().child("RoomatesInfo");
                 //Kết nối tới node có tên là contacts (node này do ta định nghĩa trong CSDL Firebase)
                 String key = databaseRef.push().getKey();
-                databaseRef.child(key).child("tinhtrang").setValue(tinhTrang);
-                databaseRef.child(key).child("gioitinh").setValue(gioiTinh);
-                databaseRef.child(key).child("ten").setValue(ten);
-                databaseRef.child(key).child("tuoi").setValue(tuoi);
-                databaseRef.child(key).child("diachi").setValue(diaChi);
+                databaseRef.child(key).child(TINH_TRANG).setValue(tinhTrang);
+                databaseRef.child(key).child(GIOI_TINH).setValue(gioiTinh);
+                databaseRef.child(key).child(TEN).setValue(ten);
+                databaseRef.child(key).child(TUOI).setValue(tuoi);
+                databaseRef.child(key).child(DIA_CHI).setValue(diaChi);
 
 //đưa bitmap về base64string:
                 ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-                selectedBitmap.compress(Bitmap.CompressFormat.PNG, PICK_IMAGE_REQUEST, byteArrayOutputStream);
+                selectedBitmap.compress(Bitmap.CompressFormat.JPEG, PICK_IMAGE_REQUEST, byteArrayOutputStream);
                 byte[] byteArray = byteArrayOutputStream.toByteArray();
                 String imgeEncoded = Base64.encodeToString(byteArray, Base64.DEFAULT);
-                databaseRef.child(key).child("picture").setValue(imgeEncoded);
+                databaseRef.child(key).child(PICTURE).setValue(imgeEncoded);
+
                 Toast.makeText(getActivity(), "Đăng thành công!", Toast.LENGTH_SHORT).show();
                 getActivity().finish();
                 isCompleted = true;
@@ -144,6 +154,24 @@ public class DangTimBanFragment extends Fragment {
         }
 
 
+    }
+
+
+    public static int calculateInSampleSize(
+            BitmapFactory.Options options, int reqWidth, int reqHeight) {
+        // Raw height and width of image
+        final int height = options.outHeight;
+        final int width = options.outWidth;
+        int inSampleSize = 1;
+
+        if (height > reqHeight || width > reqWidth) {
+            if (width > height) {
+                inSampleSize = Math.round((float)height / (float)reqHeight);
+            } else {
+                inSampleSize = Math.round((float)width / (float)reqWidth);
+            }
+        }
+        return inSampleSize;
     }
 
     private void showError(EditText input, String s) {
@@ -173,5 +201,7 @@ public class DangTimBanFragment extends Fragment {
             }
         }
     }
+
+
 
 }

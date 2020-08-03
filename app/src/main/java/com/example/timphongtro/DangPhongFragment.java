@@ -88,32 +88,7 @@ public class DangPhongFragment extends Fragment {
         return fragmentLayout;
     }
 
-//    private String getFileExtension(Uri uri) {
-//        ContentResolver cR = getContext().getContentResolver();
-//        MimeTypeMap mime = MimeTypeMap.getSingleton();
-//        return mime.getExtensionFromMimeType(cR.getType(uri));
-//    }
-//    private void uploadImage() {
-//
-//        StorageReference Ref = mStorageRef.child(System.currentTimeMillis()+"."+getFileExtension(mImageUri));
-//        Ref.putFile(mImageUri)
-//                .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-//                    @Override
-//                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-//                        // Get a URL to the uploaded content
-////                        Uri downloadUrl = taskSnapshot.getDownloadUrl();
-//                        Toast.makeText(getActivity().getApplication(), "Completed", Toast.LENGTH_SHORT).show();
-//                    }
-//                })
-//                .addOnFailureListener(new OnFailureListener() {
-//                    @Override
-//                    public void onFailure(@NonNull Exception exception) {
-//                        // Handle unsuccessful uploads
-//                        // ...
-//                    }
-//                });
-//    }
-//
+
 public void xuLyThemMoi() {
 
     //get data Loai phòng
@@ -128,7 +103,6 @@ public void xuLyThemMoi() {
     if(rdTatCa.isChecked()) gioiTinh = rdTatCa.getText().toString();
     else if(rdNam.isChecked()) gioiTinh = rdNam.getText().toString();
     else if(rdNu.isChecked()) gioiTinh = rdNu.getText().toString();
-
 
     double dienTich = Double.parseDouble(edtDienTich.getText().toString());
     double chiPhi = Double.parseDouble(edtChiPhi.getText().toString());
