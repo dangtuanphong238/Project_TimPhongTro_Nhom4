@@ -26,7 +26,7 @@
         <activity android:name="com.example.timphongtro.MainActivity" android:theme="@style/AppTheme.FullScreen"/>
         <activity android:name="com.example.timphongtro.RegisterActivity"
             android:theme="@style/AppTheme.FullScreen"/>
-        <activity android:name="post_room.PostRoomActivity" android:theme="@style/AppTheme.FullScreen"/>
+    <activity android:name="com.example.timphongtro.InfoSearch"></activity>
         <activity android:name="com.example.timphongtro.InfoRoommate" android:theme="@style/AppTheme.FullScreen"/>
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
