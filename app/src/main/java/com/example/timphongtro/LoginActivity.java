@@ -148,7 +148,7 @@ public class LoginActivity extends AppCompatActivity {
 
         if(email.isEmpty() || !email.contains("@"))
         {
-            showError(inputPassword, "Email is not valid");
+            showError(inputEmail, "Email is not valid");
         }
         else if(password.isEmpty() || password.length()<7)
         {
