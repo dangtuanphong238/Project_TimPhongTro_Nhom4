@@ -49,7 +49,7 @@ public class EditProfileActivity extends AppCompatActivity {
         final String key=intent.getStringExtra("KEY");
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         //Kết nối tới node có tên là contacts (node này do ta định nghĩa trong CSDL Firebase)
-        DatabaseReference myRef = database.getReference("contacts");
+        DatabaseReference myRef = database.getReference("profile");
 
         //truy suất và lắng nghe sự thay đổi dữ liệu
         //chỉ truy suất node được chọn trên ListView myRef.child(key)
@@ -58,14 +58,14 @@ public class EditProfileActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 try {
-                    Profile contact=dataSnapshot.getValue(Profile.class);
-                    contact.setContactId(dataSnapshot.getKey());
-                    edtId.setText(contact.getContactId());
-                    edtTen.setText(contact.getName());
-                    edtEmail.setText(contact.getEmail());
-                    edtPhone.setText(contact.getPhone());
-                    if(contact.getPicture()!=null) {
-                        byte[] decodedString = Base64.decode(contact.getPicture(), Base64.DEFAULT);
+                    Profile profile=dataSnapshot.getValue(Profile.class);
+                    profile.setContactId(dataSnapshot.getKey());
+                    edtId.setText(profile.getContactId());
+                    edtTen.setText(profile.getName());
+                    edtEmail.setText(profile.getEmail());
+                    edtPhone.setText(profile.getPhone());
+                    if(profile.getPicture()!=null) {
+                        byte[] decodedString = Base64.decode(profile.getPicture(), Base64.DEFAULT);
                         Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
                         imgPicture.setImageBitmap(decodedByte);
                     }
@@ -81,7 +81,6 @@ public class EditProfileActivity extends AppCompatActivity {
             }
         });
     }
-
     private void addControls() {
         btnCapture = (ImageButton) findViewById(R.id.btnCapture);
         btnChoose= (ImageButton) findViewById(R.id.btnChoose);
@@ -136,7 +135,7 @@ public class EditProfileActivity extends AppCompatActivity {
         try {
             FirebaseDatabase database = FirebaseDatabase.getInstance();
 //Kết nối tới node có tên là contacts (node này do ta định nghĩa trong CSDL Firebase)
-            DatabaseReference myRef = database.getReference("contacts");
+            DatabaseReference myRef = database.getReference("profile");
             String contactId=edtId.getText().toString();
             String ten = edtTen.getText().toString();
             String phone = edtPhone.getText().toString();

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "691181798307",
+    "firebase_url": "https://timphongtro-d1f80.firebaseio.com",
+    "project_id": "timphongtro-d1f80",
+    "storage_bucket": "timphongtro-d1f80.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:691181798307:android:d0d8e7bd5dc856e744d016",
+        "android_client_info": {
+          "package_name": "com.example.timphongtro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "691181798307-07llg1v16qjt5lur7pv1aj48h6e8hd6v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.timphongtro",
+            "certificate_hash": "0544044d383e94c17f67047629940821967f5e7a"
+          }
+        },
+        {
+          "client_id": "691181798307-og5e5r5k7f100ohokgn7p66gf78crt0u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAp5331MpEWFtUZQ0_IrBxBPnTOMyRyPfs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "691181798307-og5e5r5k7f100ohokgn7p66gf78crt0u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

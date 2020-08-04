@@ -21,6 +21,7 @@ import com.google.firebase.auth.FirebaseAuth;
  */
 public class TaiKhoanFragment extends Fragment {
     Button btnLogout;
+    Button btnEditprofile;
     Button btnUpdateProfile;
     FirebaseAuth mAuth;
 
@@ -39,6 +40,8 @@ public class TaiKhoanFragment extends Fragment {
         fragmentLayout = inflater.inflate(R.layout.fragment_tai_khoan, container, false);
         // Inflate the layout for this fragment
         btnLogout = fragmentLayout.findViewById(R.id.btnlogout);
+        btnEditprofile = fragmentLayout.findViewById(R.id.btnEditProfile);
+        btnUpdateProfile = fragmentLayout.findViewById(R.id.btnUpdateProfile);
         mAuth = FirebaseAuth.getInstance();
 //        -----
         FirebaseAuth.getInstance().getCurrentUser().getDisplayName();
@@ -55,6 +58,22 @@ public class TaiKhoanFragment extends Fragment {
                 mAuth.signOut();
                 Intent intent = new Intent(getActivity().getApplication(), LoginActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+            }
+        });
+        btnEditprofile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity().getApplication(), EditProfileActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+            }
+        });
+        btnUpdateProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity().getApplication(), AddProfileActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
             }
         });

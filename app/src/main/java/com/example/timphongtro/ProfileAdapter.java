@@ -3,6 +3,9 @@ package com.example.timphongtro;
 
 import android.app.Activity;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.util.Base64;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -32,11 +35,12 @@ public class ProfileAdapter extends ArrayAdapter<Profile> {
         TextView txtName=custom.findViewById(R.id.txtName);
         TextView txtPhone=custom.findViewById(R.id.txtPhone);
         TextView txtEmail=custom.findViewById(R.id.txtEmail);
-        Profile contact=getItem(position);
-        txtId.setText(contact.getContactId());
-        txtName.setText(contact.getName());
-        txtPhone.setText(contact.getPhone());
-        txtEmail.setText(contact.getEmail());
+        Profile profile=getItem(position);
+        txtId.setText(profile.getContactId());
+        txtName.setText(profile.getName());
+        txtPhone.setText(profile.getPhone());
+        txtEmail.setText(profile.getEmail());
         return custom;
     }
+
 }
