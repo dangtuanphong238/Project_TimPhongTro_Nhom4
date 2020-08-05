@@ -9,19 +9,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+
         <ImageView
             android:id="@+id/imgInfoSearch"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/ic_person"></ImageView>
-    </LinearLayout>
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_person"/>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_weight="2"
         android:orientation="vertical">
         <LinearLayout
@@ -30,15 +27,15 @@
             android:layout_weight="1"
             android:orientation="horizontal">
             <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/chi_phi"
                 android:textSize="20dp"></TextView>
             <TextView
                 android:id="@+id/txtChiPhiInfoSearch"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_weight="4"
                 ></TextView>
         </LinearLayout>
@@ -48,15 +45,15 @@
             android:layout_weight="1"
             android:orientation="horizontal">
             <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/dia_chi"
                 android:textSize="20dp"></TextView>
             <TextView
                 android:id="@+id/txtDiaChiInfoSearch"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_weight="4"></TextView>
         </LinearLayout>
         <LinearLayout
@@ -65,15 +62,15 @@
             android:layout_weight="1"
             android:orientation="horizontal">
             <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/dien_tich"
                 android:textSize="20dp"></TextView>
             <TextView
                 android:id="@+id/txtDienTichInfoSearch"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_weight="4"></TextView>
         </LinearLayout>
 
@@ -83,15 +80,15 @@
             android:layout_weight="1"
             android:orientation="horizontal">
             <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/gioi_tinh"
                 android:textSize="20dp"></TextView>
             <TextView
                 android:id="@+id/txtGioiTinhInfoSearch"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_weight="4"></TextView>
         </LinearLayout>
 
@@ -101,15 +98,15 @@
             android:layout_weight="1"
             android:orientation="horizontal">
             <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/loaiphong"
                 android:textSize="20dp"></TextView>
             <TextView
                 android:id="@+id/txtLoaiPhongInfoSearch"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_weight="4"></TextView>
         </LinearLayout>
 
@@ -119,15 +116,15 @@
             android:layout_weight="1"
             android:orientation="horizontal">
             <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/suc_chua"
                 android:textSize="20dp"></TextView>
             <TextView
                 android:id="@+id/txtSucChuaInfoSearch"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_weight="4"></TextView>
         </LinearLayout>
 
