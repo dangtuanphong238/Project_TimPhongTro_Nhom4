@@ -14,11 +14,30 @@
 
             <TextView
                 android:id="@+id/txtUserName"
-                android:textAlignment="center"
-                android:textSize="30sp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="9"/>
+                android:layout_height="715dp"
+                android:layout_weight="9"
+                android:textAlignment="center"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/btnUpdateProfile"
+                android:layout_width="164dp"
+                android:layout_height="183dp"
+                android:layout_marginBottom="20dp"
+                android:layout_weight="9"
+                android:background="@drawable/btn_bg"
+                android:text="@string/updateprofile" />
+
+            <Button
+                android:id="@+id/btnEditProfile"
+                android:layout_width="168dp"
+                android:layout_height="183dp"
+                android:layout_marginBottom="20dp"
+                android:layout_weight="9"
+                android:background="@drawable/btn_bg"
+                android:text="@string/editprofile" />
+
             <Button
                 android:id="@+id/btnlogout"
                 android:layout_width="wrap_content"

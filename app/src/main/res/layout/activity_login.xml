@@ -153,10 +153,11 @@
             android:layout_weight="1"
             app:srcCompat="@drawable/facebook" />
         <ImageView
+            android:id="@+id/btnPhone"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:srcCompat="@drawable/ic_phone_blue_24dp"/>
+            app:srcCompat="@drawable/ic_phone"/>
 
     </LinearLayout>
 
