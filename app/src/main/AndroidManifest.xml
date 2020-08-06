@@ -14,8 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name="com.example.timphongtro.ChatActivity"></activity>
-        <activity android:name="com.example.timphongtro.LoginActivity"
+        <activity android:name="com.example.timphongtro.chat.ChatActivity"></activity>
+        <activity android:name="com.example.timphongtro.login_register_logout.LoginActivity"
             android:theme="@style/AppTheme.FullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,10 +23,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.timphongtro.MainActivity" android:theme="@style/AppTheme.FullScreen"/>
-        <activity android:name="com.example.timphongtro.RegisterActivity"
+        <activity android:name="com.example.timphongtro.main.MainActivity" android:theme="@style/AppTheme.FullScreen"/>
+        <activity android:name="com.example.timphongtro.login_register_logout.RegisterActivity"
             android:theme="@style/AppTheme.FullScreen"/>
-        <activity android:name="com.example.timphongtro.InfoRoommate" android:theme="@style/AppTheme.FullScreen"/>
+        <activity android:name="com.example.timphongtro.room.InfoRoom"></activity>
+        <activity android:name="com.example.timphongtro.login_register_logout.LoginPhoneActivity"></activity>
+        <activity android:name="com.example.timphongtro.profile.AddProfileActivity"></activity>
+        <activity android:name="com.example.timphongtro.profile.EditProfileActivity"></activity>
+        <activity android:name="com.example.timphongtro.roommate.InfoRoommate" android:theme="@style/AppTheme.FullScreen"/>
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             tools:replace="android:value"

@@ -1,4 +1,4 @@
-package com.example.timphongtro;
+package com.example.timphongtro.login_register_logout;
 
 public class CountryData {
     public static final String[] countryNames = {"Afghanistan", "Albania",

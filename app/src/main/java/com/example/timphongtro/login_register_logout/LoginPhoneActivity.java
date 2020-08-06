@@ -1,4 +1,4 @@
-package com.example.timphongtro;
+package com.example.timphongtro.login_register_logout;
 
 
 import android.content.Intent;
@@ -11,6 +11,7 @@ import android.widget.Spinner;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.testgooglelogin.R;
+import com.example.timphongtro.main.MainActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginPhoneActivity extends AppCompatActivity {

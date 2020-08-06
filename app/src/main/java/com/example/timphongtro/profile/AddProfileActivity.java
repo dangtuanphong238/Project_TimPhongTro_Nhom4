@@ -1,14 +1,16 @@
-package com.example.timphongtro;
+package com.example.timphongtro.profile;
 
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.os.Bundle;
 import android.util.Base64;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -18,73 +20,30 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.testgooglelogin.R;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.util.HashMap;
 
-public class EditProfileActivity extends AppCompatActivity {
-
-    EditText edtId,edtTen,edtPhone,edtEmail;
+public class AddProfileActivity extends AppCompatActivity {
     ImageButton btnCapture;
-    ImageView imgPicture;
     ImageButton btnChoose;
+    ImageView imgPicture;
     Bitmap selectedBitmap;
+    EditText edtId,edtTen,edtPhone,edtEmail;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_profile);
+        setContentView(R.layout.activity_add_profile);
         addControls();
-        getContactDetail();
         addEvents();
     }
-
-    private void getContactDetail() {
-        Intent intent=getIntent();
-        final String key=intent.getStringExtra("KEY");
-        final FirebaseDatabase database = FirebaseDatabase.getInstance();
-        //Kết nối tới node có tên là contacts (node này do ta định nghĩa trong CSDL Firebase)
-        DatabaseReference myRef = database.getReference("profile");
-
-        //truy suất và lắng nghe sự thay đổi dữ liệu
-        //chỉ truy suất node được chọn trên ListView myRef.child(key)
-        //addListenerForSingleValueEvent để lấy dữ liệu đơn
-        myRef.child(key).addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                try {
-                    Profile profile=dataSnapshot.getValue(Profile.class);
-                    profile.setContactId(dataSnapshot.getKey());
-                    edtId.setText(profile.getContactId());
-                    edtTen.setText(profile.getName());
-                    edtEmail.setText(profile.getEmail());
-                    edtPhone.setText(profile.getPhone());
-                    if(profile.getPicture()!=null) {
-                        byte[] decodedString = Base64.decode(profile.getPicture(), Base64.DEFAULT);
-                        Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
-                        imgPicture.setImageBitmap(decodedByte);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Log.e("LOI_JSON",ex.toString());
-                }
-            }
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                Log.w("LOI_CHITIET", "loadPost:onCancelled", databaseError.toException());
-            }
-        });
-    }
-    private void addControls() {
-        btnCapture = (ImageButton) findViewById(R.id.btnCapture);
-        btnChoose= (ImageButton) findViewById(R.id.btnChoose);
-        imgPicture= (ImageView) findViewById(R.id.imgPicture);
+    public void addControls()
+    {
+        btnCapture = findViewById(R.id.btnCapture);
+        btnChoose= findViewById(R.id.btnChoose);
+        imgPicture=findViewById(R.id.imgPicture);
         edtId=findViewById(R.id.edtContactId);
         edtTen=findViewById(R.id.edtTen);
         edtPhone=findViewById(R.id.edtPhone);
@@ -104,12 +63,13 @@ public class EditProfileActivity extends AppCompatActivity {
             }
         });
     }
+    //xử lý chọn hình
     private void choosePicture() {
         Intent pickPhoto = new Intent(Intent.ACTION_PICK,
                 android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         startActivityForResult(pickPhoto , 200);//one can be replaced with any action code
     }
-
+    //xử lý chụp hình
     private void capturePicture() {
         Intent cInt = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         startActivityForResult(cInt,100);
@@ -131,11 +91,11 @@ public class EditProfileActivity extends AppCompatActivity {
             }
         }
     }
-    public void xuLyCapNhat(View view) {
+    public void xuLyThemMoi(View view) {
         try {
             FirebaseDatabase database = FirebaseDatabase.getInstance();
 //Kết nối tới node có tên là contacts (node này do ta định nghĩa trong CSDL Firebase)
-            DatabaseReference myRef = database.getReference("profile");
+            DatabaseReference myRef = database.getReference("contacts");
             String contactId=edtId.getText().toString();
             String ten = edtTen.getText().toString();
             String phone = edtPhone.getText().toString();

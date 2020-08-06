@@ -1,11 +1,8 @@
-package com.example.timphongtro;
+package com.example.timphongtro.profile;
 
 
 import android.app.Activity;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.util.Base64;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;

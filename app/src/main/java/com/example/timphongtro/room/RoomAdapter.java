@@ -1,4 +1,4 @@
-package com.example.timphongtro;
+package com.example.timphongtro.room;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -6,13 +6,11 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.util.Base64;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -22,13 +20,13 @@ import com.example.testgooglelogin.R;
 
 import java.util.ArrayList;
 
-public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.MyViewHolder> {
+public class RoomAdapter extends RecyclerView.Adapter<RoomAdapter.MyViewHolder> {
 
     Context context;
-    ArrayList<SearchModel> arrayList;
+    ArrayList<RoomModel> arrayList;
     CardView cardviewSearch;
     RecyclerView recyclerView;
-    public SearchAdapter(Context c, ArrayList<SearchModel> arr)
+    public RoomAdapter(Context c, ArrayList<RoomModel> arr)
     {
         context = c;
         arrayList = arr;
@@ -58,7 +56,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.MyViewHold
         view.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent( context, InfoSearch.class );
+                Intent intent = new Intent( context, InfoRoom.class );
                 int pos = (int) v.getTag();
 
                 intent.putExtra( "chiphi",arrayList.get(pos).getChiphi() );

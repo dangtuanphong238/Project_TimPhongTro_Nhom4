@@ -4,48 +4,57 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.example.timphongtro.TaiKhoanFragment">
+    tools:context="com.example.timphongtro.login_register_logout.TaiKhoanFragment">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
+            android:weightSum="3"
             android:gravity="center">
 
-            <TextView
-                android:id="@+id/txtUserName"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="715dp"
-                android:layout_weight="9"
-                android:textAlignment="center"
-                android:textSize="30sp" />
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                >
 
-            <Button
-                android:id="@+id/btnUpdateProfile"
-                android:layout_width="164dp"
-                android:layout_height="183dp"
-                android:layout_marginBottom="20dp"
-                android:layout_weight="9"
-                android:background="@drawable/btn_bg"
-                android:text="@string/updateprofile" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="bottom">
 
-            <Button
-                android:id="@+id/btnEditProfile"
-                android:layout_width="168dp"
-                android:layout_height="183dp"
-                android:layout_marginBottom="20dp"
-                android:layout_weight="9"
-                android:background="@drawable/btn_bg"
-                android:text="@string/editprofile" />
+                <Button
+                    android:id="@+id/btnUpdateProfile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_bg"
+                    android:text="@string/updateprofile" />
 
-            <Button
-                android:id="@+id/btnlogout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/btn_bg"
-                android:text="@string/logout"
-                android:layout_marginBottom="20dp"
-                />
+                <Button
+                    android:id="@+id/btnEditProfile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_bg"
+                    android:text="@string/editprofile" />
+
+                <Button
+                    android:id="@+id/btnlogout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/btn_bg"
+                    android:text="@string/logout"
+                    android:layout_weight="1"
+                    android:layout_marginBottom="20dp"
+                    />
+            </LinearLayout>
 
         </LinearLayout>
 

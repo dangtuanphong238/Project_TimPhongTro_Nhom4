@@ -1,9 +1,8 @@
-package com.example.timphongtro;
+package com.example.timphongtro.room;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -12,10 +11,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.testgooglelogin.R;
 
-public class InfoSearch extends AppCompatActivity {
+public class InfoRoom extends AppCompatActivity {
     TextView txtChiPhiInfoSearch,txtDiaChiInfoSearch,txtDienTichInfoSearch,txtGioiTinhInfoSearch,txtLoaiPhongInfoSearch,txtSucChuaInfoSearch;
     ImageView imgInfoSearch;
-    private SearchModel searchModel;
+    private RoomModel searchModel;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
