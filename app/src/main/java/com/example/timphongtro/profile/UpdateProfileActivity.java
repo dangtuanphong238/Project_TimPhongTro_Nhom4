@@ -2,11 +2,7 @@ package com.example.timphongtro.profile;
 
 
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.database.Cursor;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Matrix;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.os.Bundle;
@@ -17,38 +13,51 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.testgooglelogin.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
-public class AddProfileActivity extends AppCompatActivity {
+public class UpdateProfileActivity extends AppCompatActivity {
     ImageButton btnCapture;
     ImageButton btnChoose;
     ImageView imgPicture;
     Bitmap selectedBitmap;
-    EditText edtId,edtTen,edtPhone,edtEmail;
+    EditText edtUsername,edtTen,edtPhone,edtEmail;
+    FirebaseAuth mAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_profile);
-        addControls();
+        setContentView(R.layout.activity_update_profile);
+        mAuth = FirebaseAuth.getInstance();
+
+        anhXa();
         addEvents();
+
     }
-    public void addControls()
+
+
+    public void anhXa()
     {
         btnCapture = findViewById(R.id.btnCapture);
         btnChoose= findViewById(R.id.btnChoose);
         imgPicture=findViewById(R.id.imgPicture);
-        edtId=findViewById(R.id.edtContactId);
+        edtUsername =findViewById(R.id.edtUsername);
         edtTen=findViewById(R.id.edtTen);
         edtPhone=findViewById(R.id.edtPhone);
-        edtEmail=findViewById(R.id.edtEmail);
     }
+
     public void addEvents() {
         btnCapture.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,17 +72,20 @@ public class AddProfileActivity extends AppCompatActivity {
             }
         });
     }
+
     //xử lý chọn hình
     private void choosePicture() {
         Intent pickPhoto = new Intent(Intent.ACTION_PICK,
                 android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         startActivityForResult(pickPhoto , 200);//one can be replaced with any action code
     }
+
     //xử lý chụp hình
     private void capturePicture() {
         Intent cInt = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         startActivityForResult(cInt,100);
     }
+
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 100 && resultCode == RESULT_OK) {
@@ -91,25 +103,28 @@ public class AddProfileActivity extends AppCompatActivity {
             }
         }
     }
+
     public void xuLyThemMoi(View view) {
         try {
             FirebaseDatabase database = FirebaseDatabase.getInstance();
 //Kết nối tới node có tên là contacts (node này do ta định nghĩa trong CSDL Firebase)
-            DatabaseReference myRef = database.getReference("contacts");
-            String contactId=edtId.getText().toString();
+            DatabaseReference myRef = database.getReference("Users");
+            FirebaseUser firebaseUser = mAuth.getCurrentUser();
+
+            String UserId =  firebaseUser.getUid();
+            String username = edtUsername.getText().toString();
             String ten = edtTen.getText().toString();
             String phone = edtPhone.getText().toString();
-            String email = edtEmail.getText().toString();
-            myRef.child(contactId).child("phone").setValue(phone);
-            myRef.child(contactId).child("email").setValue(email);
-            myRef.child(contactId).child("name").setValue(ten);
+            myRef.child(UserId).child("username").setValue(username);
+            myRef.child(UserId).child("phone").setValue(phone);
+            myRef.child(UserId).child("name").setValue(ten);
 
             //đưa bitmap về base64string:
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
             selectedBitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
             byte[] byteArray = byteArrayOutputStream .toByteArray();
             String imgeEncoded = Base64.encodeToString(byteArray, Base64.DEFAULT);
-            myRef.child(contactId).child("picture").setValue(imgeEncoded);
+            myRef.child(UserId).child("picture").setValue(imgeEncoded);
 
             finish();
         }

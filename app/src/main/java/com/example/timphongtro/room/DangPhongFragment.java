@@ -18,6 +18,8 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.Toast;
 import com.example.testgooglelogin.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import java.io.ByteArrayOutputStream;
@@ -31,9 +33,18 @@ import static android.app.Activity.RESULT_OK;
  */
 public class DangPhongFragment extends Fragment {
 
-    private int PICK_IMAGE_REQUEST = 1;
+    private int PICK_IMAGE_REQUEST_CAP = 100;
+    private int PICK_IMAGE_REQUEST_CHOOSE = 200;
+    private String LOAIPHONG = "loaiphong";
+    private String SUCCHUA = "succhua";
+    private String GIOITINH = "gioitinh";
+    private String DIENTICH = "dientich";
+    private String CHIPHI = "chiphi";
+    private String DIACHI = "diachi";
+    private String USER_ID = "userid";
+    FirebaseAuth mAuth;
     ImageView imgView;
-    ImageButton btnChoose;
+    ImageButton btnChoose,btnCapture;
     Button btnDang;
     RadioButton rdKTX,rdPhongChoThue,rdPhongOGhep, rdNhaNguyenCan, rdTatCa, rdNam, rdNu;
     EditText edtSucChua, edtDienTich, edtChiPhi, edtDiaChi;
@@ -56,6 +67,7 @@ public class DangPhongFragment extends Fragment {
 
         //Ánh xạ view
         btnChoose = fragmentLayout.findViewById(R.id.btnChoose);
+        btnCapture =fragmentLayout.findViewById(R.id.btnCapture);
         btnDang = fragmentLayout.findViewById(R.id.btnDang);
         imgView = fragmentLayout.findViewById(R.id.imgView);
         rdKTX = fragmentLayout.findViewById(R.id.rdKTX);
@@ -69,10 +81,20 @@ public class DangPhongFragment extends Fragment {
         rdNam = fragmentLayout.findViewById(R.id.rdNam);
         rdNu = fragmentLayout.findViewById(R.id.rdNu);
         edtDiaChi = fragmentLayout.findViewById(R.id.edtDiaChi);
+
+        mAuth = FirebaseAuth.getInstance();
+
         btnChoose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 chooseImage();
+            }
+        });
+
+        btnCapture.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                capturePicture();
             }
         });
 
@@ -112,17 +134,21 @@ public void xuLyThemMoi() {
     try {
         DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReference().child("RoomInfo");
         //Kết nối tới node có tên là contacts (node này do ta định nghĩa trong CSDL Firebase)
+        FirebaseUser firebaseUser = mAuth.getCurrentUser();
+        String Uid = firebaseUser.getUid();
+
         String key = databaseRef.push().getKey();
-        databaseRef.child(key).child("loaiphong").setValue(loaiPhong);
-        databaseRef.child(key).child("succhua").setValue(sucChua);
-        databaseRef.child(key).child("gioitinh").setValue(gioiTinh);
-        databaseRef.child(key).child("dientich").setValue(dienTich);
-        databaseRef.child(key).child("chiphi").setValue(chiPhi);
-        databaseRef.child(key).child("diachi").setValue(diaChi);
+        databaseRef.child(key).child(USER_ID).setValue(Uid);
+        databaseRef.child(key).child(LOAIPHONG).setValue(loaiPhong);
+        databaseRef.child(key).child(SUCCHUA).setValue(sucChua);
+        databaseRef.child(key).child(GIOITINH).setValue(gioiTinh);
+        databaseRef.child(key).child(DIENTICH).setValue(dienTich);
+        databaseRef.child(key).child(CHIPHI).setValue(chiPhi);
+        databaseRef.child(key).child(DIACHI).setValue(diaChi);
 
 //đưa bitmap về base64string:
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        selectedBitmap.compress(Bitmap.CompressFormat.PNG, PICK_IMAGE_REQUEST, byteArrayOutputStream);
+        selectedBitmap.compress(Bitmap.CompressFormat.PNG, PICK_IMAGE_REQUEST_CAP, byteArrayOutputStream);
         byte[] byteArray = byteArrayOutputStream.toByteArray();
         String imgeEncoded = Base64.encodeToString(byteArray, Base64.DEFAULT);
         databaseRef.child(key).child("picture").setValue(imgeEncoded);
@@ -138,16 +164,24 @@ public void xuLyThemMoi() {
         Intent intent = new Intent();
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(intent,PICK_IMAGE_REQUEST);
+        startActivityForResult(intent,PICK_IMAGE_REQUEST_CHOOSE);
 
     }
-
-
+    private void capturePicture() {
+        Intent cInt = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(cInt,PICK_IMAGE_REQUEST_CAP);
+    }
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK
-                && data != null && data.getData() != null )
+        if(requestCode == PICK_IMAGE_REQUEST_CAP && resultCode == RESULT_OK)
+        {
+            //xử lý lấy ảnh trực tiếp lúc chụp hình:
+            selectedBitmap = (Bitmap) data.getExtras().get("data");
+            imgView.setImageBitmap(selectedBitmap);
+
+        }
+        else if(requestCode == PICK_IMAGE_REQUEST_CHOOSE && resultCode == RESULT_OK)
         {
             try {
                 mImageUri = data.getData();
@@ -157,7 +191,23 @@ public void xuLyThemMoi() {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         }
     }
+
+//    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//        if(requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK
+//                && data != null && data.getData() != null )
+//        {
+//            try {
+//                mImageUri = data.getData();
+//                selectedBitmap = MediaStore.Images.Media.getBitmap(getActivity().getApplicationContext().getContentResolver(), mImageUri);
+//                imgView.setImageBitmap(selectedBitmap);
+//
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//
+//        }
+//    }
 }

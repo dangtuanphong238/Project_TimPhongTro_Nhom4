@@ -14,8 +14,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name="com.example.timphongtro.chat.ChatActivity"></activity>
-        <activity android:name="com.example.timphongtro.login_register_logout.LoginActivity"
+        <activity android:name="com.example.timphongtro.update_profile.UpdateProfileActivity"></activity>
+        <activity android:name="com.example.timphongtro.chat.ChatActivity" />
+        <activity
+            android:name="com.example.timphongtro.login_register_logout.LoginActivity"
             android:theme="@style/AppTheme.FullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,19 +25,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.timphongtro.main.MainActivity" android:theme="@style/AppTheme.FullScreen"/>
-        <activity android:name="com.example.timphongtro.login_register_logout.RegisterActivity"
-            android:theme="@style/AppTheme.FullScreen"/>
-        <activity android:name="com.example.timphongtro.room.InfoRoom"></activity>
-        <activity android:name="com.example.timphongtro.login_register_logout.LoginPhoneActivity"></activity>
-        <activity android:name="com.example.timphongtro.profile.AddProfileActivity"></activity>
-        <activity android:name="com.example.timphongtro.profile.EditProfileActivity"></activity>
-        <activity android:name="com.example.timphongtro.roommate.InfoRoommate" android:theme="@style/AppTheme.FullScreen"/>
+        <activity
+            android:name="com.example.timphongtro.main.MainActivity"
+            android:theme="@style/AppTheme.FullScreen" />
+        <activity
+            android:name="com.example.timphongtro.login_register_logout.RegisterActivity"
+            android:theme="@style/AppTheme.FullScreen" />
+        <activity android:name="com.example.timphongtro.room.InfoRoom" />
+        <activity android:name="com.example.timphongtro.login_register_logout.LoginPhoneActivity" />
+        <activity android:name="com.example.timphongtro.profile.UpdateProfileActivity" />
+        <activity android:name="com.example.timphongtro.profile.EditProfileActivity" />
+        <activity
+            android:name="com.example.timphongtro.roommate.InfoRoommate"
+            android:theme="@style/AppTheme.FullScreen" />
+
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
-            tools:replace="android:value"
             android:value="@string/facebook_app_id"
-            />
+            tools:replace="android:value" />
     </application>
 
 </manifest>

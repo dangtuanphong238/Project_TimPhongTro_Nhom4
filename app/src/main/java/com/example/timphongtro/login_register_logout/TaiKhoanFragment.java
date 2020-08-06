@@ -13,8 +13,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.testgooglelogin.R;
-import com.example.timphongtro.login_register_logout.LoginActivity;
-import com.example.timphongtro.profile.AddProfileActivity;
+import com.example.timphongtro.profile.UpdateProfileActivity;
 import com.example.timphongtro.profile.EditProfileActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -75,7 +74,7 @@ public class TaiKhoanFragment extends Fragment {
         btnUpdateProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity().getApplication(), AddProfileActivity.class);
+                Intent intent = new Intent(getActivity().getApplication(), UpdateProfileActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
             }
