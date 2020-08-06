@@ -1,4 +1,4 @@
-package com.example.timphongtro;
+package com.example.timphongtro.room;
 
 
 import android.os.Bundle;
@@ -30,8 +30,8 @@ public class SearchFragment extends Fragment {
 
     DatabaseReference reference;
     RecyclerView recyclerView;
-    ArrayList<SearchModel> arrayList;
-    SearchAdapter adapter;
+    ArrayList<RoomModel> arrayList;
+    RoomAdapter adapter;
 
     public SearchFragment() {
         // Required empty public constructor
@@ -47,16 +47,16 @@ public class SearchFragment extends Fragment {
 
         recyclerView = layoutFragment.findViewById( R.id.myRecyclerSearch );
         recyclerView.setLayoutManager( new LinearLayoutManager( getContext() ) );
-        arrayList = new ArrayList<SearchModel>();
+        arrayList = new ArrayList<RoomModel>();
         reference = FirebaseDatabase.getInstance().getReference().child("RoomInfo");
         reference.addValueEventListener( new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot dataSnapshot1:snapshot.getChildren()){
-                    SearchModel searchModel=dataSnapshot1.getValue(SearchModel.class);
+                    RoomModel searchModel=dataSnapshot1.getValue(RoomModel.class);
                     arrayList.add(searchModel);
                 }
-                adapter = new SearchAdapter( getContext(),arrayList );
+                adapter = new RoomAdapter( getContext(),arrayList );
                 recyclerView.setAdapter( adapter );
             }
 

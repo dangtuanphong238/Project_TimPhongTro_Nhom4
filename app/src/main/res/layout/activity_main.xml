@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.timphongtro.MainActivity"
+    tools:context="com.example.timphongtro.main.MainActivity"
     android:weightSum="10">
 
     <com.google.android.material.tabs.TabLayout
@@ -15,6 +15,7 @@
         android:layout_weight="1"
         app:tabMode="scrollable"
         app:tabIndicatorColor="@color/colorRed"
+
         >
 
         <com.google.android.material.tabs.TabItem
@@ -22,7 +23,8 @@
             android:layout_height="wrap_content"
             android:text="@string/timkiem"
             android:icon="@drawable/ic_home_24dp"
-            android:id="@+id/TabSearch"/>
+            android:id="@+id/TabSearch"
+            />
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"

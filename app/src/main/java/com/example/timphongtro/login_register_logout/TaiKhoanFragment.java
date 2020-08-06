@@ -1,4 +1,4 @@
-package com.example.timphongtro;
+package com.example.timphongtro.login_register_logout;
 
 
 import android.content.Intent;
@@ -13,6 +13,9 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.testgooglelogin.R;
+import com.example.timphongtro.login_register_logout.LoginActivity;
+import com.example.timphongtro.profile.AddProfileActivity;
+import com.example.timphongtro.profile.EditProfileActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
 

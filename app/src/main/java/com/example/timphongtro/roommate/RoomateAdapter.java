@@ -1,4 +1,4 @@
-package com.example.timphongtro;
+package com.example.timphongtro.roommate;
 
 import android.content.Context;
 import android.content.Intent;

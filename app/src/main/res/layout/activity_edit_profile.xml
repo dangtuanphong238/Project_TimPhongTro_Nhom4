@@ -5,7 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+<<<<<<< HEAD
     tools:context="com.example.timphongtro.EditProfileActivity">
+=======
+    tools:context="com.example.timphongtro.profile.EditProfileActivity">
+>>>>>>> TestOfDangTuanPhong
     <TextView
         android:id="@+id/textView0"
         android:layout_width="match_parent"

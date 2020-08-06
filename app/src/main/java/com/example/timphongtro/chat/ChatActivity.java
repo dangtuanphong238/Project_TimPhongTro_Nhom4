@@ -1,4 +1,4 @@
-package com.example.timphongtro;
+package com.example.timphongtro.chat;
 
 import androidx.appcompat.app.AppCompatActivity;
 

@@ -1,7 +1,8 @@
-package com.example.timphongtro;
+package com.example.timphongtro.room;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.util.Base64;
@@ -12,17 +13,20 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.testgooglelogin.R;
 
 import java.util.ArrayList;
 
-public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.MyViewHolder> {
+public class RoomAdapter extends RecyclerView.Adapter<RoomAdapter.MyViewHolder> {
 
     Context context;
-    ArrayList<SearchModel> arrayList;
-    public SearchAdapter(Context c, ArrayList<SearchModel> arr)
+    ArrayList<RoomModel> arrayList;
+    CardView cardviewSearch;
+    RecyclerView recyclerView;
+    public RoomAdapter(Context c, ArrayList<RoomModel> arr)
     {
         context = c;
         arrayList = arr;
@@ -41,13 +45,37 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.MyViewHold
             txtGioiTinh = itemView.findViewById( R.id.txtGioiTinh);
             imgSearch = itemView.findViewById( R.id.imgSearch);
             txtSucChua = itemView.findViewById( R.id.txtSucChua);
-
+            recyclerView = itemView.findViewById( R.id.myRecyclerSearch );
+            cardviewSearch = itemView.findViewById( R.id.cardviewSearch );
         }
     }
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new MyViewHolder(LayoutInflater.from(context).inflate( R.layout.cardviewsearch, parent,false));
+        final View view = LayoutInflater.from( context).inflate( R.layout.cardviewsearch ,parent,false);
+        view.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent( context, InfoRoom.class );
+                int pos = (int) v.getTag();
+
+                intent.putExtra( "chiphi",arrayList.get(pos).getChiphi() );
+                intent.putExtra( "diachi",arrayList.get( pos ).getDiachi() );
+                intent.putExtra( "dientich",arrayList.get(pos).getDientich() );
+                intent.putExtra( "gioitinh",arrayList.get( pos ).getGioitinh() );
+                intent.putExtra( "loaiphong",arrayList.get(pos).getLoaiphong() );
+                intent.putExtra( "succhua",arrayList.get( pos ).getSucchua() );
+                if(arrayList.get( pos ).getPicture()!= null){
+                    byte[] decodedString = Base64.decode( arrayList.get(pos).getPicture(),Base64.DEFAULT );
+                    intent.putExtra( "decoded",decodedString );
+                }
+                context.startActivity(intent);
+            }
+
+        } );
+        return new MyViewHolder(view);
+
+
     }
 
     @SuppressLint("SetTextI18n")
@@ -64,6 +92,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.MyViewHold
             holder.imgSearch.setImageBitmap(decodedByte);
         }
         holder.txtSucChua.setText("Sức Chứa: " + arrayList.get(position).getSucchua());
+        cardviewSearch.setTag(position);
 
     }
 

@@ -1,4 +1,4 @@
-package com.example.timphongtro;
+package com.example.timphongtro.roommate;
 
 
 import android.content.Intent;
@@ -15,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.testgooglelogin.R;
+import com.example.timphongtro.chat.ChatActivity;
 
 
 public class InfoRoommate extends AppCompatActivity {

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.timphongtro.LoginActivity">
+    tools:context="com.example.timphongtro.login_register_logout.LoginActivity">
 
     <View
         android:id="@+id/topView"

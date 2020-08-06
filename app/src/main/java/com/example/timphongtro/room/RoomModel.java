@@ -1,6 +1,6 @@
-package com.example.timphongtro;
+package com.example.timphongtro.room;
 
-public class SearchModel {
+public class RoomModel {
     private Double chiphi;
     private String diachi;
     private Double dientich;
@@ -9,10 +9,10 @@ public class SearchModel {
     private int succhua;
     private String picture;
 
-    public SearchModel() {
+    public RoomModel() {
     }
 
-    public SearchModel(Double chiphi, String diachi, Double dientich, String gioitinh, String loaiphong, int succhua, String picture) {
+    public RoomModel(Double chiphi, String diachi, Double dientich, String gioitinh, String loaiphong, int succhua, String picture) {
         this.chiphi = chiphi;
         this.diachi = diachi;
         this.dientich = dientich;

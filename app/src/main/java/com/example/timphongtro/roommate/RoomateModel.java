@@ -1,4 +1,4 @@
-package com.example.timphongtro;
+package com.example.timphongtro.roommate;
 
 import java.io.Serializable;
 

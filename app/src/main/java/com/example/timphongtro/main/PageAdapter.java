@@ -1,9 +1,15 @@
-package com.example.timphongtro;
+package com.example.timphongtro.main;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
+
+import com.example.timphongtro.login_register_logout.TaiKhoanFragment;
+import com.example.timphongtro.room.DangPhongFragment;
+import com.example.timphongtro.room.SearchFragment;
+import com.example.timphongtro.roommate.DangTimBanFragment;
+import com.example.timphongtro.roommate.OGhepFragment;
 
 public class PageAdapter extends FragmentPagerAdapter {
     private int numOfTabs;

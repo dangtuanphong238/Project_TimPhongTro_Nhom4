@@ -1,4 +1,4 @@
-package com.example.timphongtro;
+package com.example.timphongtro.main;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
