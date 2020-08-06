@@ -37,6 +37,8 @@
     <string name="anh">Ảnh</string>
     <string name="dang">Đăng</string>
     <string name="logout">Logout</string>
+    <string name="editprofile">Edit Profile</string>
+    <string name="updateprofile">Update Profile</string>
     <string name="name">Tên:</string>
     <string name="tuoi">Tuổi:</string>
     <string name="tinhtrang">Tình trạng:</string>
